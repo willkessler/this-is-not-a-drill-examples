@@ -25,6 +25,8 @@ page value of `home` in the dashboard.  The `template` parameter can
 be used to pass a custom template for inlined notifications (not modal
 or toast types).
 
+<img src="./public/CreateNewNotifPageId.png" width="250" height="250">
+
 When you render the TinadComponent without a `pageId` parameter, then
 all applicable notifications will be served on every page where the
 component renders.
