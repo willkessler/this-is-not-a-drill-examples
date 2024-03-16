@@ -10,7 +10,7 @@ const Navbar = () => {
             <Anchor className={classes.navbarLinks} href="/deposit" fz="md">Make Deposit</Anchor>
             <Anchor className={classes.navbarLinks} href="/transfer" fz="md">Transfer $$</Anchor>
             <Anchor className={classes.navbarLinks} href="/statements" fz="md">Statements</Anchor>
-            <Anchor className={classes.navbarLinks} href="/about" fz="md">About Us</Anchor>
+            <Anchor className={classes.navbarLinks} href="/about" fz="md">About</Anchor>
             <br />
             <br />
             <br />

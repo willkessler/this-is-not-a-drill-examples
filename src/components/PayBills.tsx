@@ -4,13 +4,26 @@ import classes from '../css/MainLayout.module.css'; // Adjust the path as necess
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
 
 export const PayBills = () => {
+
+  const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, tinadType, dismiss }) => {
+    return (
+      <div style={{ padding: '20px', backgroundColor: 'white', boxShadow: '0 0 10px rgba(0,0,0,0.1)', width: '100%', borderRadius:'10px' }}>
+        <div style={{ marginBottom: '10px' }}>{tinadContent}</div>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          {dismiss && <button onClick={dismiss} style={{ marginLeft: 'auto' }}>Dismiss</button>}
+        </div>
+      </div>
+    );
+  };
+
     return (
         <>
-          <Title>Pay Your Bills</Title>
+          <Title>Pay Bills</Title>
 
-          <TinadComponent pageId="pay" mode="inline" />
+        <Text size="xl">Pay your monthly bills here.</Text>
 
-        <Text size="xl">On this page, you can pay your monthly bills.</Text>
+        <TinadComponent pageId="pay" mode="inline" template={CustomTemplate} />
+
       <Group gap="xs" className={classes.mainContent}>
         <Card shadow="sm" p="sm" radius="sm" className={classes.card}>
           <Stack justify="space-between" className={classes.cardOuterStack}>

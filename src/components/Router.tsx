@@ -12,12 +12,13 @@ const RouterComponent = () => {
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />} >
-          <Route index element={<HomePage />} />
+          <Route index element={<About />} />
           <Route path="dashboard" element={<HomePage />} />
           <Route path="pay" element={<PayBills />} />
           <Route path="transfer" element={<TransferMoney />} />
           <Route path="deposit" element={<Deposit />} />
           <Route path="statements" element={<Statements />} />
+          <Route path="home" element={<HomePage />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>

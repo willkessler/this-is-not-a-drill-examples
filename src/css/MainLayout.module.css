@@ -41,7 +41,7 @@
 
 @media (max-width: 500px) {
   .mainContent {
-    flex-direction: column;
+    margin-bottom:50px;
   }
 }
 
@@ -68,6 +68,7 @@
 
 .demoControls {
   background-color: #02aedd;
+  margin-bottom:160px;
 }
 
 .homePageHeader {
@@ -84,7 +85,7 @@
 .card {
   background-color: #fff;
   color:#555;
-  width:140px;
+  width:130px;
   height:250px;
   cursor:pointer;
 }
@@ -101,7 +102,6 @@
 .cardText {
   font-weight:800;
   font-size:18px;
-/*  margin:12px 0 6px 0;*/
 }
 
 .welcomeMsg {

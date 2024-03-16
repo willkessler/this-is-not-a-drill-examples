@@ -3,7 +3,7 @@ import { Anchor, Card, Code, Image, Text, Title, Button, Group } from '@mantine/
 import classes from '../css/MainLayout.module.css';
 
 const goHome = () => {
-  window.location.assign('/');
+  window.location.assign('/home');
 }
 
 export const About = () => {
@@ -25,10 +25,13 @@ export const About = () => {
           watch the tutorial video, put your temporary API key into
           the file environment file <Code>.env</Code>, and then click
           the hamburger menu to navigate or use the quick links below.
-          </Text> <ul> <li><Anchor href="/">Bank
-          dashboard</Anchor></li> <li><Anchor href="/pay">Pay your
-          bills</Anchor></li> </ul>
+          </Text> 
 
+            <ul> 
+               <li><Anchor href="/home">Bank Dashboard</Anchor></li>
+               <li><Anchor href="/pay">Pay Bills Page</Anchor></li> 
+               <li><Anchor href="/transfer">Transfer Funds Page</Anchor></li> 
+            </ul>
   
       <Button onClick={goHome} color="blue" fullWidth mt="md" radius="md">
         Sounds Great, Let's go!

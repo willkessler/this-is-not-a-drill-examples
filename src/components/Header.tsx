@@ -16,7 +16,7 @@ const Header:React.FC<HeaderProps> = ({opened, toggle}) => {
           size="sm"
           style={{marginLeft:'20px'}}
         />
-            <a href="/">
+            <a href="/home">
           <Image 
             me="xs"
             h={250}
