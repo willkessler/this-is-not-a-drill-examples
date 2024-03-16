@@ -1,7 +1,7 @@
 import { Anchor, Card, Group, Image , Title } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
-import { getTinadSDKConfig, resetAllViews } from '@thisisnotadrill/react-core';
+import { getTinadSDKConfig, resetAllViews } from '@this-is-not-a-drill/react-core';
 import {
     IconBook,
     IconRecycle,
