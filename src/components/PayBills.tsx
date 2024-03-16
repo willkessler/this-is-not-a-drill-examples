@@ -6,7 +6,7 @@ import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-u
 export const PayBills = () => {
     return (
         <>
-          <Title>Pay My Bills</Title>
+          <Title>Pay Your Bills</Title>
 
           <TinadComponent pageId="pay" mode="inline" />
 

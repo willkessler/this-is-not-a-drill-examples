@@ -20,20 +20,18 @@ export const About = () => {
       </Group>
 
        <Text size="lg">
-          This playground provides a simulation of a regional bank web application.
-          Each page of this application demonstrates a different notification type.<br /><br />
-          The tutorial video below explains things, or, just dive into the code editor.
-          To get started, put your temporary API key into the file environment file <Code>.env</Code>,
-      and then click the hamburger menu to navigate (upper left) or use the quick links below:
-        </Text>
-        <ul>
-          <li><Anchor href="/">Bank dashboard</Anchor></li>
-          <li><Anchor href="/pay">Pay your bills</Anchor></li>
-        </ul>
+          The playground contains a simulation of a bank's responsive web application.  Each application page demonstrates a
+          different notification type.<br /><br /> To get started,
+          watch the tutorial video, put your temporary API key into
+          the file environment file <Code>.env</Code>, and then click
+          the hamburger menu to navigate or use the quick links below.
+          </Text> <ul> <li><Anchor href="/">Bank
+          dashboard</Anchor></li> <li><Anchor href="/pay">Pay your
+          bills</Anchor></li> </ul>
 
   
       <Button onClick={goHome} color="blue" fullWidth mt="md" radius="md">
-        Ok, I got it! 
+        Sounds Great, Let's go!
       </Button>
     </Card>
         </>

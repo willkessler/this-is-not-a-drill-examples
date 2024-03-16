@@ -1,10 +1,11 @@
 import '@mantine/core/styles.css';
-import { Title } from '@mantine/core';
+import { Title, Text } from '@mantine/core';
 
 export const Deposit = () => {
     return (
         <>
-          <Title>Making a deposit at UFCU</Title>
+          <Title>Deposits at UFCU</Title>
+          <Text size="xl">On this page, you can make a deposit.</Text>
         </>
   );
 }

@@ -22,7 +22,7 @@ const HomePage = () => {
     <div>
       <TinadComponent pageId="home" mode="toast" template={CustomTemplate} />
 
-      <Title me="lg" order={1}>Your Financial Overview</Title>
+      <Title style={{marginBottom:'10px'}} me="lg" order={1}>Financial Overview</Title>
 
       <Group gap="xs" className={classes.mainContent}>
         <Card shadow="sm" p="sm" radius="sm" className={classes.card}>
