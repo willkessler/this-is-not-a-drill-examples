@@ -4,6 +4,10 @@ import { initTinadSDK } from '@this-is-not-a-drill/react-core';
 
 const App = () => {
 
+  // In normal usage, you'd probably initialize TINAD here. However, because the filesystem
+  // at codesandbox.io is by default read-only, we have you initialize TINAD through the text input
+  // on the About page.
+/*
     const tinadConfig = { 
         // This can hold whatever end user id you want to use to distinguish individual users. 
         userId: import.meta.env.VITE_TINAD_ENDUSER_ID,
@@ -13,6 +17,7 @@ const App = () => {
         apiBaseUrl: import.meta.env.VITE_API_BASE_URL, 
     };
     initTinadSDK(tinadConfig);
+*/
 
     return (
         <>
