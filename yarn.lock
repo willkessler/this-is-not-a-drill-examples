@@ -722,10 +722,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@this-is-not-a-drill/react-core@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@this-is-not-a-drill/react-core/-/react-core-1.0.0.tgz#db9502eae804cb256d4e4dec32a29ffa1f248531"
-  integrity sha512-3CJK4vy6zBGizLp7zSGZPzRgbf985zR7Vz2rnU9C78CO5fehfEvXNhEf1qnz7V/dE9R785mVJn2FGdadWGIwug==
+"@this-is-not-a-drill/react-core@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@this-is-not-a-drill/react-core/-/react-core-1.0.2.tgz#508bf34c7fa50c53693f4d16d67656a9bad55b46"
+  integrity sha512-ika673SMKuXkIOY3ekAP07KGKUle6Ro4my6lPIze/SoW53idBBEillQYMC7A5ksA2tuCvoB+PkXRFnb1GKSLpQ==
   dependencies:
     "@rollup/plugin-commonjs" "^25.0.7"
     "@rollup/plugin-node-resolve" "^15.2.3"
