@@ -13,7 +13,7 @@ const MainLayout = () => {
 
   return (
     <AppShell
-      header={{ height: 170 }}
+      header={{ height: 140 }}
       navbar={{
           width: '140px',
           breakpoint: 'sm',

@@ -1,4 +1,4 @@
-import { Card, Image, Text, Group } from '@mantine/core';
+import { Card, Image, Stack, Text, Title, Group } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
@@ -22,33 +22,52 @@ const HomePage = () => {
     <div>
       <TinadComponent pageId="home" mode="toast" template={CustomTemplate} />
 
-      <Group>
-        <Card shadow="sm" p="lg" radius="md"  className={classes.card}>
-          <Image 
-            radius="md"
-            h={120}
-            fit="contain"
-            src="CheckingAccountIcon.webp" />
-          <Text className={classes.cardText}>Checking Account</Text>
-          <Text size="lg" mt="xs">$1,234.56</Text>
+      <Title me="lg" order={1}>Your Financial Overview</Title>
+
+      <Group gap="xs" className={classes.mainContent}>
+        <Card shadow="sm" p="sm" radius="sm" className={classes.card}>
+          <Stack justify="space-between" className={classes.cardOuterStack}>
+            <div className={classes.cardInnerStack}>
+              <Image 
+                radius="md"
+                h={80}
+                src="CheckingAccountIcon.webp" />
+            </div>
+            <Stack align="left" justify="flex-end" gap="xs">
+               <Text className={classes.cardText}>Checking Account</Text>
+               <Text size="lg" >$1,234.56</Text>
+              </Stack>
+          </Stack>
         </Card>
-        <Card shadow="sm" p="lg" radius="md" className={classes.card}>
-          <Image 
-            radius="md"
-            h={120}
-            fit="contain"
-            src="SavingsAccountIcon.webp" />
-          <Text className={classes.cardText}>Savings Account</Text>
-          <Text size="lg" mt="xs">$4,567.89</Text>
+
+        <Card shadow="sm" p="sm" radius="sm" className={classes.card}>
+          <Stack justify="space-between" className={classes.cardOuterStack}>
+            <div className={classes.cardInnerStack}>
+              <Image 
+                radius="md"
+                h={80}
+                src="SavingsAccountIcon.webp" />
+            </div>
+            <Stack align="left" justify="flex-end" gap="xs">
+               <Text className={classes.cardText}>Savings Account</Text>
+               <Text size="lg" >$9,298.88</Text>
+              </Stack>
+          </Stack>
         </Card>
-        <Card shadow="sm" p="lg" radius="md" className={classes.card}>
-          <Image 
-            radius="md"
-            h={120}
-            fit="contain"
-            src="PortfolioIcon.webp" />
-          <Text className={classes.cardText}>Investment Portfolio</Text>
-          <Text size="lg" mt="xs">$8,910.11</Text>
+
+        <Card shadow="sm" p="sm" radius="sm" className={classes.card}>
+          <Stack justify="space-between" className={classes.cardOuterStack}>
+            <div className={classes.cardInnerStack}>
+              <Image 
+                radius="md"
+                h={80}
+                src="PortfolioIcon.webp" />
+            </div>
+            <Stack align="left" justify="flex-end" gap="xs">
+               <Text className={classes.cardText}>Investment Portfolio</Text>
+               <Text size="lg" >$110,234.56</Text>
+              </Stack>
+          </Stack>
         </Card>
       </Group>
     </div>

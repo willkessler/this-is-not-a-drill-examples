@@ -1,4 +1,4 @@
-import { Anchor, Card, Group, Image , Title } from '@mantine/core';
+import { Anchor, Card, Group, Stack, Image , Title } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { getTinadSDKConfig, resetAllViews } from '@this-is-not-a-drill/react-core';
@@ -23,19 +23,26 @@ const DemoControls = () => {
   
   return (
     <>
-       <Card shadow="sm" radius="md" p="xs" withBorder className={classes.demoControls}>
+       <Card shadow="sm" radius="md" className={classes.demoControls}>
           <Group justify="flex-start" align="center" gap="xs">
           <a href="https://this-is-not-a-drill.com" target="_blank">
           <Image
-            pe="xs"
-            h={70}
+            h={80}
             src="ThisIsNotADrill_cutout.png" />
           </a>
-          <Title order={6}><span style={{fontStyle:'italic'}}>This is Not a Drill!</span><br />Control Panel</Title>
-          <IconMovie style={{color:'#000', marginLeft:'15px'}} /><Anchor style={{marginLeft:'-8px', color:'#000'}}>Watch Tutorial</Anchor>
-      <IconRecycle style={{color:'#000', marginLeft:'15px'}} /><Anchor onClick={handleResetAllViews} style={{marginLeft:'-8px', color:'#000'}}>Reset Views</Anchor>
-          <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor style={{marginLeft:'-8px', color:'#000'}}>Help/Docs</Anchor>
-          </Group>
+          <Title order={5}><span style={{fontStyle:'italic'}}>This is Not a Drill!</span><br />Control Panel</Title>
+      </Group>
+      <Stack>
+      <Group >
+          <IconMovie style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Watch Tutorial</Anchor>
+      </Group>
+      <Group>
+        <IconRecycle style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" onClick={handleResetAllViews} style={{marginLeft:'-8px', color:'#000'}}>Reset Views</Anchor>
+      </Group>
+      <Group>
+          <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Help/Docs</Anchor>
+      </Group>
+          </Stack>
         </Card>
     </>
   );

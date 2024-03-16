@@ -8,26 +8,22 @@ interface HeaderProps {
 const Header:React.FC<HeaderProps> = ({opened, toggle}) => {
   return (
     <>
+       <Group gap="xs">
         <Burger
           opened={opened}
           onClick={toggle}
           hiddenFrom="sm"
           size="sm"
+          style={{marginLeft:'20px'}}
         />
-       <Group gap="xs">
-            <a href="/">
-          <Image
-            pe="xs"
-            h={220}
-            src="UnifiedFinancialLogo.png" />
-            </a>
             <a href="/">
           <Image 
             me="xs"
-            h={300}
+            h={250}
             src="UnifiedTextLogo2.png" />
             </a>
-         </Group>
+       </Group>
+
     </>
   );
 };

@@ -1,5 +1,5 @@
 import '@mantine/core/styles.css';
-import { Card, Code, Image, Text, Button, Group } from '@mantine/core';
+import { Anchor, Card, Code, Image, Text, Title, Button, Group } from '@mantine/core';
 import classes from '../css/MainLayout.module.css';
 
 const goHome = () => {
@@ -10,29 +10,30 @@ export const About = () => {
     return (
         <>
 
-      <Card shadow="sm" padding="lg" radius="md" withBorder className={classes.aboutCard}>
-      <Card.Section>
+      <Card shadow="sm" padding="md" radius="md" withBorder className={classes.aboutCard}>
+      <Group justify="flex-start">
         <Image
           src="ThisIsNotADrill_cutout.png"
-          height={400}
+          w={130}
         />
-      </Card.Section>
-
-      <Group justify="space-between" mt="md" mb="xs">
-        <Text size="xl" fw={400}>Welcome to the <Text span style={{fontStyle:'italic'}}>This Is Not A Drill! (TINAD)</Text> Playground</Text>
+        <Title order={3}>This is Not A Drill! Playground</Title>
       </Group>
 
-       <Text size="md">
-          This playground provides a simulated web application for a regional bank. 
-          Your TINAD notifications will show up here once you put your 
-          temporary API key into the file <Code>main.tsx</Code>, in the <Code>init()</Code> call that configures the service.
-          The links in the left bar, e.g. <Text span fw={800}>Pay Your Bills</Text>, will display a specific notification 
-          tied to that pageId in the TINAD dashboard.
-          Watch the tutorial video below for a quick explanation, or just play around in the code editor.
+       <Text size="lg">
+          This playground provides a simulation of a regional bank web application.
+          Each page of this application demonstrates a different notification type.<br /><br />
+          The tutorial video below explains things, or, just dive into the code editor.
+          To get started, put your temporary API key into the file environment file <Code>.env</Code>,
+      and then click the hamburger menu to navigate (upper left) or use the quick links below:
         </Text>
+        <ul>
+          <li><Anchor href="/">Bank dashboard</Anchor></li>
+          <li><Anchor href="/pay">Pay your bills</Anchor></li>
+        </ul>
+
   
       <Button onClick={goHome} color="blue" fullWidth mt="md" radius="md">
-        Ok, I got the idea! Take me to the home page
+        Ok, I got it! 
       </Button>
     </Card>
         </>
