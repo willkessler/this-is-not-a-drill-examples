@@ -1,6 +1,6 @@
 import '@mantine/core/styles.css';
 import { useState, useEffect } from 'react';
-import { Anchor, Card, Code, Image, Group, Text, TextInput, Title, Button } from '@mantine/core';
+import { Anchor, Card,  Image, Group, Text, TextInput, Title, Button } from '@mantine/core';
 import classes from '../css/MainLayout.module.css';
 import { initTinadSDK, getTinadSDKConfig } from '@this-is-not-a-drill/react-core';
 import {
