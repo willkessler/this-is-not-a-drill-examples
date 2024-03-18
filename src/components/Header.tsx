@@ -1,4 +1,5 @@
 import { Burger, Image, Group } from '@mantine/core';
+import { useEnv } from '../envContext';
 
 interface HeaderProps {
   opened: boolean;
@@ -20,7 +21,7 @@ const Header:React.FC<HeaderProps> = ({opened, toggle}) => {
           <Image 
             me="xs"
             h={250}
-            src="{import.meta.env.TINAD_IMAGE_LOCATION}UnifiedTextLogo2.png" />
+            src={`${TINAD_IMAGE_LOCATION}UnifiedTextLogo2.png`} />
             </a>
        </Group>
 
