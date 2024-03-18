@@ -15,7 +15,7 @@ const goHome = () => {
 export const About = () => {
   const [ tempApiKey, setTempApiKey ] = useState<string>('');
   const [ apiKeyIsOk, setApiKeyIsOk ] = useState<boolean>(false);
-  const { VITE_TINAD_API_KEY, VITE_TINAD_ENDUSER_ID, VITE_TINAD_IMAGE_LOCATION } = useEnv();
+  const { VITE_TINAD_API_BASE_URL, VITE_TINAD_API_KEY, VITE_TINAD_ENDUSER_ID, VITE_TINAD_IMAGE_LOCATION } = useEnv();
 
   useEffect(() => {
     const tinadConfig = getTinadSDKConfig();
@@ -38,7 +38,7 @@ export const About = () => {
         // Put your API key in the environment file .env so it can be picked up here.
         apiKey: VITE_TINAD_API_KEY,
         // For production, do not pass this in and TINAD will default to the production API endpoint.
-        apiBaseUrl: VITE_API_BASE_URL, 
+        apiBaseUrl: VITE_TINAD_API_BASE_URL, 
       };
       console.log(`Reinitializing TINAD SDK with:${JSON.stringify(tinadConfig, null, 2)}`);
       //console.log(newKey);
@@ -52,7 +52,7 @@ export const About = () => {
       <Card shadow="sm" padding="md" radius="md" withBorder className={classes.aboutCard}>
         <Group justify="flex-start">
           <Image
-            src="{env.VITE_TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png"
+            src={`${VITE_TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`}
             w={130}
           />
           <Title order={3}>This is Not A Drill! Playground</Title>
