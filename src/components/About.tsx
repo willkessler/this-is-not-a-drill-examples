@@ -27,16 +27,19 @@ export const About = () => {
     const setApiKey = (newKey: string) => {
         setTempApiKey(newKey);
         const isValidKey = newKey.length === 8;
+        // really need a proper api key validator endpoint we can call
         setApiKeyIsOk(isValidKey);
 
         if (isValidKey) {
             const tinadConfig = { 
                 // This can hold whatever end user id you want to use to distinguish individual users. 
-                userId: import.meta.env.VITE_TINAD_ENDUSER_ID,
+                //userId: import.meta.env.VITE_TINAD_ENDUSER_ID,
+                userId: 'user12345a',
                 // Put your API key in the environment file .env so it can be picked up here.
                 apiKey: newKey,
                 // For production, do not pass this in and TINAD will default to the production API endpoint.
-                apiBaseUrl: import.meta.env.VITE_API_BASE_URL, 
+                //apiBaseUrl: import.meta.env.VITE_API_BASE_URL, 
+                apiBaseUrl: 'http://localhost:8080',
             };
             console.log(`Reinitializing TINAD SDK with:${JSON.stringify(tinadConfig, null, 2)}`);
             //console.log(newKey);
