@@ -31,7 +31,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="CheckingAccountIcon.webp" />
+                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}CheckingAccountIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Checking Account</Text>
@@ -46,7 +46,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="SavingsAccountIcon.webp" />
+                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}SavingsAccountIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Savings Account</Text>
@@ -61,7 +61,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="PortfolioIcon.webp" />
+                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}PortfolioIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Investment Portfolio</Text>

@@ -53,7 +53,7 @@ export const About = () => {
       <Card shadow="sm" padding="md" radius="md" withBorder className={classes.aboutCard}>
       <Group justify="flex-start">
         <Image
-          src="ThisIsNotADrill_cutout.png"
+          src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png"
           w={130}
         />
         <Title order={3}>This is Not A Drill! Playground</Title>

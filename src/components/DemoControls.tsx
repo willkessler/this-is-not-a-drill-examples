@@ -28,7 +28,7 @@ const DemoControls = () => {
           <a href="https://this-is-not-a-drill.com" target="_blank">
           <Image
             h={80}
-            src="ThisIsNotADrill_cutout.png" />
+            src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png" />
           </a>
           <Title order={5}><span style={{fontStyle:'italic'}}>This is Not a Drill!</span><br />Control Panel</Title>
       </Group>
