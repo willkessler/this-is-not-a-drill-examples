@@ -27,3 +27,5 @@ dist-ssr
 *~
 env.ts
 envUtil.ts
+envConfig.ts
+*.0

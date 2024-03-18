@@ -5,15 +5,15 @@ import { useEnv } from '../envContext';
 
 const App = () => {
 
-  const { VITE_TINAD_API_KEY, VITE_TINAD_API_BASE_URL, VITE_TINAD_ENDUSER_ID } = useEnv();
+  const { TINAD_API_KEY, TINAD_API_BASE_URL, TINAD_ENDUSER_ID } = useEnv();
 
   const tinadConfig = { 
     // This can hold whatever end user id you want to use to distinguish individual users. 
-    userId: VITE_TINAD_ENDUSER_ID,
+    userId: TINAD_ENDUSER_ID,
     // Put your API key in the environment file .env so it can be picked up here.
-    apiKey: VITE_TINAD_API_KEY,
+    apiKey: TINAD_API_KEY,
     // For production, do not pass this in and TINAD will default to the production API endpoint.
-    apiBaseUrl: VITE_TINAD_API_BASE_URL, 
+    apiBaseUrl: TINAD_API_BASE_URL, 
   };
   initTinadSDK(tinadConfig);
 
