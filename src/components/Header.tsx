@@ -7,6 +7,8 @@ interface HeaderProps {
 }
 
 const Header:React.FC<HeaderProps> = ({opened, toggle}) => {
+  const { TINAD_IMAGE_LOCATION } = useEnv();
+
   return (
     <>
        <Group gap="xs">

@@ -5,7 +5,7 @@ import { useEnv } from '../envContext';
 
 const App = () => {
 
-  const { TINAD_API_KEY, TINAD_API_BASE_URL, TINAD_ENDUSER_ID } = useEnv();
+  const { TINAD_ENDUSER_ID, TINAD_API_KEY, TINAD_API_BASE_URL } = useEnv();
 
   const tinadConfig = { 
     // This can hold whatever end user id you want to use to distinguish individual users. 
