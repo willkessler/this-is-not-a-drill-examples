@@ -7,8 +7,11 @@ import {
     IconRecycle,
     IconMovie,
 } from '@tabler/icons-react';
+import { useEnv } from '../envContext';
 
 const DemoControls = () => {
+
+  const { VITE_TINAD_API_KEY, VITE_TINAD_ENDUSER_ID, VITE_TINAD_IMAGE_LOCATION } = useEnv();
 
   const handleResetAllViews = async () => {
     // Call the core to reset all views. this may mess up if the user is right in the middle of a chain of notifs.
@@ -28,7 +31,7 @@ const DemoControls = () => {
           <a href="https://this-is-not-a-drill.com" target="_blank">
           <Image
             h={80}
-            src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png" />
+            src="{VITE_TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png" />
           </a>
           <Title order={5}><span style={{fontStyle:'italic'}}>This is Not a Drill!</span><br />Control Panel</Title>
       </Group>

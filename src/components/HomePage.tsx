@@ -2,8 +2,11 @@ import { Card, Image, Stack, Text, Title, Group } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
+import { useEnv } from '../envContext';
   
 const HomePage = () => {
+
+  const { VITE_TINAD_API_KEY, VITE_TINAD_ENDUSER_ID, VITE_TINAD_IMAGE_LOCATION } = useEnv();
 
   // Example of a Custom Template that a client can pass in for inline notifications.
   const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, tinadType, dismiss }) => {
@@ -31,7 +34,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}CheckingAccountIcon.webp" />
+                src="{VITE_TINAD_IMAGE_LOCATION}CheckingAccountIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Checking Account</Text>
@@ -46,7 +49,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}SavingsAccountIcon.webp" />
+                src="{VITE_TINAD_IMAGE_LOCATION}SavingsAccountIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Savings Account</Text>
@@ -61,7 +64,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}PortfolioIcon.webp" />
+                src="{VITE_TINAD_IMAGE_LOCATION}PortfolioIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Investment Portfolio</Text>

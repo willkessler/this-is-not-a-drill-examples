@@ -2,8 +2,11 @@ import '@mantine/core/styles.css';
 import { Card, Group, Stack, Text, Image, Title } from '@mantine/core';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
+import { useEnv } from '../envContext';
 
 export const PayBills = () => {
+
+  const { VITE_TINAD_API_KEY, VITE_TINAD_ENDUSER_ID, VITE_TINAD_IMAGE_LOCATION } = useEnv();
 
   const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, tinadType, dismiss }) => {
     // You can use the tinadTtype to determine whatever you want to render for each
@@ -34,7 +37,7 @@ export const PayBills = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}CheckingAccountIcon.webp" />
+                src="{VITE_TINAD_IMAGE_LOCATION}CheckingAccountIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Checking Account</Text>
@@ -49,7 +52,7 @@ export const PayBills = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}SavingsAccountIcon.webp" />
+                src="{VITE_TINAD_IMAGE_LOCATION}SavingsAccountIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Savings Account</Text>
@@ -64,7 +67,7 @@ export const PayBills = () => {
               <Image 
                 radius="md"
                 h={80}
-                src="{import.meta.env.VITE_TINAD_IMAGE_LOCATION}PortfolioIcon.webp" />
+                src="{VITE_TINAD_IMAGE_LOCATION}PortfolioIcon.webp" />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Investment Portfolio</Text>
