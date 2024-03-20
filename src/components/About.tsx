@@ -22,28 +22,28 @@ export const About = () => {
             src={`${TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`}
             w={130}
           />
-          <Title order={3}>This is Not A Drill! Playground</Title>
+          <Title order={4}>This is Not A Drill! (TINAD) Playground</Title>
         </Group>
 
-        <Text size="lg">
-          The playground contains a simulation of a regional bank's responsive web application.  
-          Each page demonstrates a different notification type. You can add
-          notifications in the dashboard and see them show up here, or play with the code.
+        <Text size="md">
+          This is a simulated regional bank web application.  
+          Each page demonstrates a different TINAD notification type. You can add
+          notifications in the TINAD dashboard and see them show up here, or just play with this codebase.
         </Text>
 
-        <Text size="lg" style={{marginTop:'20px'}} >
-          To start with, navigate with the hamburger icon (<IconMenu2  style={{paddingTop:'10px'}} />)  in the upper left corner (if visible), or, just click a link below.
+        <Text size="md" style={{marginTop:'20px'}} >
+          To start with, navigate with the left nav bar or the hamburger icon (<IconMenu2  style={{paddingTop:'10px'}} />)  or, use the links below. Use the blue control panel to simulate different signed in users, reset all views for the current user, or get help.
         </Text> 
 
         <ul> 
-          <li><Anchor href="/home">Financial Overview (Home) Page</Anchor></li>
-          <li><Anchor href="/pay">Pay Bills Page</Anchor></li> 
+          <li><Anchor href="/home">Financial Overview Page</Anchor></li>
+          <li><Anchor href="/pay">Payments Page</Anchor></li> 
           <li><Anchor href="/transfer">Transfer Funds Page</Anchor></li> 
         </ul>
 
         
         <Button onClick={goHome} color="blue" fullWidth mt="md" radius="md">
-          Sounds Great, Let's go!
+          Got it! Let's go!
         </Button>
       </Card>
     </>
