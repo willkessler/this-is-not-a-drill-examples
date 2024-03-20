@@ -44,12 +44,14 @@ automatically injects a time-limited API key into the environment
 You may notice loading of the web application's pages to be slow in
 StackBlitz. This is an aspect of Stackblitz and does not represent
 anything about TINAD's speed in production. If you clone this repo and
-run it locally you will get a better sense of timings. A lot of hard
+run it locally you will get a better sense of timing. A lot of hard
 work has been done to keep TINAD as light and as fast as possible.
 
 If you fork the Stackblitz rig into your own account on Stackblitz and
-use webcontainers, you should see a huge speed increase, which will be
-closer to actual production speeds.
+use <a
+href="https://blog.stackblitz.com/posts/introducing-webcontainers/">webcontainers</a>,
+you should see a huge speed increase, which will be closer to actual
+production speeds.
 
 ## Local Usage
 
