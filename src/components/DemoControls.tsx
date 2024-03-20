@@ -4,6 +4,7 @@ import classes from '../css/MainLayout.module.css'; // Adjust the path as necess
 import { useSDKData } from '@this-is-not-a-drill/react-core';
 import {
     IconBook,
+    IconExchange,
     IconRecycle,
     IconMovie,
 } from '@tabler/icons-react';
@@ -41,7 +42,7 @@ const DemoControls = () => {
         </Group>
         <Stack>
           <Group>
-            <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Switch User ({currentUserId}}</Anchor>
+            <IconExchange style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Switch User ({currentUserId})</Anchor>
           </Group>
 
           <Group>
