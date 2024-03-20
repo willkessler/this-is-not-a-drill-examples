@@ -3,7 +3,7 @@ import '@mantine/core/styles.css';
 import { Card, Group, Stack, Text, Image, Title } from '@mantine/core';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
-import { setPageId, usePageId } from './PageIdContext';
+import { usePageId } from './PageIdContext';
 import { useEnv } from '../envContext';
 
 export const PayBills = () => {

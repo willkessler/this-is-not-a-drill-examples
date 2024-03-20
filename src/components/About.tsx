@@ -68,7 +68,7 @@ export const About = () => {
             value={tempApiKey}
             w={220}
             placeholder='Paste temporary api key here' 
-            onChange={(e) => setApiKey(e.target.value)}  style={{marginBottom:'10px'}}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApiKey(e.target.value)}  style={{marginBottom:'10px'}}
           />
           <IconThumbUp style={{color:(apiKeyIsOk ? 'green' : '#ddd') }} />
           <Text size="sm" style={{marginLeft:'0px', color:(apiKeyIsOk ? 'green' : '#ddd')}}>{apiKeyIsOk ? 'Looks good' : 'Check the key'}</Text>
