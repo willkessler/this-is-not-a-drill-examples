@@ -15,7 +15,7 @@ const goHome = () => {
 export const About = () => {
   const [ tempApiKey, setTempApiKey ] = useState<string>('');
   const [ apiKeyIsOk, setApiKeyIsOk ] = useState<boolean>(false);
-  const { TINAD_API_BASE_URL, TINAD_API_KEY, TINAD_ENDUSER_ID, TINAD_IMAGE_LOCATION } = useEnv();
+  const { TINAD_API_BASE_URL, TINAD_ENDUSER_ID, TINAD_IMAGE_LOCATION } = useEnv();
 
   useEffect(() => {
     const tinadConfig = getTinadSDKConfig();

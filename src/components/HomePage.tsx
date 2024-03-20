@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Card, Image, Stack, Text, Title, Group } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
