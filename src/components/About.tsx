@@ -4,7 +4,8 @@ import { Anchor, Card,  Image, Group, Text, TextInput, Title, Button } from '@ma
 import classes from '../css/MainLayout.module.css';
 import { initTinadSDK, getTinadSDKConfig } from '@this-is-not-a-drill/react-core';
 import {
-    IconThumbUp
+  IconThumbUp,
+  IconMenu2
 } from '@tabler/icons-react';
 import { useEnv } from '../envContext';
 
@@ -59,27 +60,17 @@ export const About = () => {
         </Group>
 
         <Text size="lg">
-          The playground contains a simulation of a regional bank responsive web application.  
-          Each application page demonstrates a
-          different notification type.<br /><br />
+          The playground contains a simulation of a regional bank's responsive web application.  
+          Each page demonstrates a different notification type. You can add
+          notifications in the dashboard and see them show up here, or play with the code.
         </Text>
-        <Group>
-          <TextInput 
-            value={tempApiKey}
-            w={220}
-            placeholder='Paste temporary api key here' 
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApiKey(e.target.value)}  style={{marginBottom:'10px'}}
-          />
-          <IconThumbUp style={{color:(apiKeyIsOk ? 'green' : '#ddd') }} />
-          <Text size="sm" style={{marginLeft:'0px', color:(apiKeyIsOk ? 'green' : '#ddd')}}>{apiKeyIsOk ? 'Looks good' : 'Check the key'}</Text>
-        </Group>
-        <Text>
-          To get started, paste your temporary API key in the box above.
-          Then click the hamburger menu to navigate or use the quick links below.
+
+        <Text size="lg" style={{marginTop:'20px'}} >
+          To start with, navigate with the hamburger icon (<IconMenu2  style={{paddingTop:'10px'}} />)  in the upper left corner (if visible), or, just click a link below.
         </Text> 
 
         <ul> 
-          <li><Anchor href="/home">Bank Dashboard</Anchor></li>
+          <li><Anchor href="/home">Financial Overview (Home) Page</Anchor></li>
           <li><Anchor href="/pay">Pay Bills Page</Anchor></li> 
           <li><Anchor href="/transfer">Transfer Funds Page</Anchor></li> 
         </ul>

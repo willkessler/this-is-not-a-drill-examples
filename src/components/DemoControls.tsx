@@ -14,8 +14,8 @@ const DemoControls = () => {
 
   const { TINAD_IMAGE_LOCATION } = useEnv();
   const { pageId } = usePageId();
-  console.log('DemoControls: page id=', pageId);
   const { reset: resetAllViewsCore } = useSDKData(pageId);
+  const currentUserId = 5;
 
   const handleResetAllViews = async () => {
     // Call the core to reset all views. this may mess up if the user is right in the middle of a chain of notifs.
@@ -30,27 +30,33 @@ const DemoControls = () => {
   
   return (
     <>
-       <Card shadow="sm" radius="md" className={classes.demoControls}>
-          <Group justify="flex-start" align="center" gap="xs">
+      <Card shadow="sm" radius="md" className={classes.demoControls}>
+        <Group justify="flex-start" align="center" gap="xs">
           <a href="https://this-is-not-a-drill.com" target="_blank">
-          <Image
-            h={80}
-            src={`${TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`} />
+            <Image
+              h={80}
+              src={`${TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`} />
           </a>
           <Title order={5}><span style={{fontStyle:'italic'}}>This is Not a Drill!</span><br />Control Panel</Title>
-      </Group>
-      <Stack>
-      <Group >
-          <IconMovie style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Watch Tutorial</Anchor>
-      </Group>
-      <Group>
-        <IconRecycle style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" onClick={handleResetAllViews} style={{marginLeft:'-8px', color:'#000'}}>Reset Views</Anchor>
-      </Group>
-      <Group>
-          <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Help/Docs</Anchor>
-      </Group>
-          </Stack>
-        </Card>
+        </Group>
+        <Stack>
+          <Group>
+            <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Switch User ({currentUserId}}</Anchor>
+          </Group>
+
+          <Group>
+            <IconRecycle style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" onClick={handleResetAllViews} style={{marginLeft:'-8px', color:'#000'}}>Reset Views</Anchor>
+          </Group>
+
+          <Group >
+            <IconMovie style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Watch Tutorial</Anchor>
+          </Group>
+
+          <Group>
+            <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Help/Docs</Anchor>
+          </Group>
+        </Stack>
+      </Card>
     </>
   );
 }
