@@ -1,7 +1,8 @@
 import '@mantine/core/styles.css';
 import RouterComponent from './Router';
-import { initTinadSDK } from '@this-is-not-a-drill/react-core';
+import { initTinadSDK, TinadSDKProvider } from '@this-is-not-a-drill/react-core';
 import { useEnv } from '../envContext';
+import { PageIdProvider } from './PageIdContext';
 
 const App = () => {
 
@@ -37,7 +38,11 @@ const App = () => {
 
   return (
     <>
-      <RouterComponent />
+      <PageIdProvider>
+        <TinadSDKProvider>
+          <RouterComponent />
+        </TinadSDKProvider>
+      </PageIdProvider>
     </>
   );
 }

@@ -1,23 +1,27 @@
 import { Anchor, Card, Group, Stack, Image , Title } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
-import { resetAllViews } from '@this-is-not-a-drill/react-core';
+import { useSDKData } from '@this-is-not-a-drill/react-core';
 import {
     IconBook,
     IconRecycle,
     IconMovie,
 } from '@tabler/icons-react';
+import { usePageId } from './PageIdContext';
 import { useEnv } from '../envContext';
 
 const DemoControls = () => {
 
   const { TINAD_IMAGE_LOCATION } = useEnv();
+  const { pageId } = usePageId();
+  console.log('DemoControls: page id=', pageId);
+  const { reset: resetAllViewsCore } = useSDKData(pageId);
 
   const handleResetAllViews = async () => {
     // Call the core to reset all views. this may mess up if the user is right in the middle of a chain of notifs.
     console.log('Executing resetAllViews.');
     try {
-      await resetAllViews();
+      await resetAllViewsCore();
       console.log('Views reset successfully');
     } catch (error) {
       console.log('Failed to reset views:', error);

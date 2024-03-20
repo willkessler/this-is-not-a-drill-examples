@@ -36,7 +36,7 @@ export const About = () => {
         // This can hold whatever end user id you want to use to distinguish individual users. 
         userId: TINAD_ENDUSER_ID,
         // Put your API key in the environment file .env so it can be picked up here.
-        apiKey: TINAD_API_KEY,
+        apiKey: newKey,
         // For production, do not pass this in and TINAD will default to the production API endpoint.
         apiBaseUrl: TINAD_API_BASE_URL, 
       };
