@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <>
       <Stack justify="flex-start" align="flex-start">
-            <Anchor className={classes.navbarLinks} href="/home" fz="md">Dashboard</Anchor>
+            <Anchor className={classes.navbarLinks} href="/home" fz="md">Overview</Anchor>
             <Anchor className={classes.navbarLinks} href="/pay" fz="md">Pay Bills</Anchor>
             <Anchor className={classes.navbarLinks} href="/deposit" fz="md">Make Deposit</Anchor>
             <Anchor className={classes.navbarLinks} href="/transfer" fz="md">Transfer $$</Anchor>

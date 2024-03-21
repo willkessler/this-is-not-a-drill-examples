@@ -21,9 +21,15 @@
   background-color:#d2e6eb;
   text-align: center;
   padding: 10px;
-  border-top: 1px dotted #555;
   color: #777;
 }
+
+@media (min-width: 770px) {
+  .footer {
+    margin-left: 70px;
+  }
+}
+
 
 .title {
   color: #228be6;
