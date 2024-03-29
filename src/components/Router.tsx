@@ -6,11 +6,13 @@ import PayBills from './PayBills';
 import TransferMoney from './TransferMoney';
 import Deposit from './Deposit';
 import Statements from './Statements';
+import DemoLayout from './DemoLayout'; 
 
 const RouterComponent = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/demo" element={<DemoLayout />} />
         <Route path="/" element={<MainLayout />} >
           <Route index element={<About />} />
           <Route path="dashboard" element={<HomePage />} />

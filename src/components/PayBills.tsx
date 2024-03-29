@@ -2,14 +2,11 @@ import { useEffect } from 'react';
 import '@mantine/core/styles.css';
 import { Card, Group, Stack, Text, Image, Title } from '@mantine/core';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
-import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
 import { useEnv } from '../envContext';
 
 export const PayBills = () => {
 
-  const { updateTinadConfig } = useTinadSDK();
-  const { getConfig } = useSDKData();
   const { TINAD_IMAGE_LOCATION } = useEnv();
 
   const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, tinadType, dismiss }) => {

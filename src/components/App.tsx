@@ -29,6 +29,20 @@ const App = () => {
 //  console.log('apiKey from URL:', apiKey);
 
   useEffect(() => {
+
+    // listen for postMessage "reload" events sent by another demo panel.
+    // These are sent when the demo user decides to change end users or reset views.
+    const handlePostMessage = event => {
+      if (event.origin !== window.location.origin) {
+        return; // ignore unknown origin messages
+      }
+
+      if (event.data == 'RELOAD_IFRAME') {
+        window.location.reload();
+      }
+    }
+
+
     console.log(`App.tsx: TINAD_API_KEY = ${TINAD_API_KEY}`);
     const previousTinadConfig = getConfig();
     console.log(`App.tsx: previousTinadConfig: ${JSON.stringify(previousTinadConfig, null, 2)}`);
@@ -42,6 +56,11 @@ const App = () => {
     };
     console.log(`App.tsx has a new tinad config=${JSON.stringify(tinadConfig, null, 2)}`);
     updateTinadConfig(tinadConfig);
+
+    window.addEventListener('message', handlePostMessage);
+    return () => {
+      window.removeEventListener('message', handlePostMessage); // remove postMessage listener on component unmount
+    }
 
   }, []);
 

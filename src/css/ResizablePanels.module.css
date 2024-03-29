@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width:100vw;
+  height: 100vh;
+  user-select: none; /* Prevent text selection while dragging */
+}
+
+.panelsContainer {
+  display: flex;
+  flex: 1; /* Take up remaining space */
+}
+
+.topPanel {
+  height: 55px;
+  background-color: #689;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 8px solid #369;
+}
+
+.topPanel h5 {
+  font-weight: 600;
+  color: #fff;
+}
+
+.topPanel a, .topPanel svg {
+  color: #eee;
+}
+.topPanel a {
+  margin-left: -14px;
+}
+.topPanel svg {
+  margin-left:12px;
+}
+
+.topPanel a:hover {
+  margin-left: -14px;
+  text-decoration:underline;
+  color: #ddd;
+}
+
+.panel {
+  flex-grow: 1;
+  height:100%;
+  border: none;
+}
+
+.divider {
+  cursor: ew-resize;
+  background-color: #369;
+  width: 8px;
+  height: 100%;
+  transition: background-color 0.2s;
+}
+
+.divider:hover {
+  background-color: #888;
+}

@@ -1,4 +1,5 @@
 import { AppShell, Stack } from '@mantine/core';
+import { useEffect } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css';
@@ -7,10 +8,21 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import DemoControls from './DemoControls';
+import { useEnv } from '../envContext';
 
 const MainLayout = () => {
   const [opened, { toggle }] = useDisclosure();
+  const { TINAD_IS_DEMO_SITE } = useEnv();
 
+  let demoControls = (<></>);
+  useEffect(() => {
+    if (TINAD_IS_DEMO_SITE) {
+      demoControls = (
+        <DemoControls />
+      )
+    }
+  }, [useEnv, TINAD_IS_DEMO_SITE]);
+  
   return (
     <AppShell
       header={{ height: 140 }}
@@ -32,7 +44,7 @@ const MainLayout = () => {
      <AppShell.Main className={classes.mainContent}>
        <Stack justify="space-between">
          <Outlet />
-         <DemoControls />
+         { demoControls }
        </Stack>
       </AppShell.Main>
 

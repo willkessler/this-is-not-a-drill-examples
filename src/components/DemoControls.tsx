@@ -16,17 +16,6 @@ const DemoControls = () => {
   const { updateTinadConfig } = useTinadSDK();
   const { getConfig, reset, invalidate } = useSDKData();
   const { TINAD_IMAGE_LOCATION } = useEnv();
-
-/*
-  const getLocalStorage = (key:string) => {
-    const localStorageValue = localStorage.getItem(key);
-    return localStorageValue;
-  };        
-
-  const setLocalStorage = (key:string, value:string) => {
-    localStorage.setItem(key,value);
-  };        
-  */
   
   const changeUserId = (lastUserId: string) => {
     console.log(`changeUserId, lastUserId: ${lastUserId}`);
@@ -38,9 +27,7 @@ const DemoControls = () => {
     const newConfig = { userId: `user-${newValue}` };
     console.log(`new sdkConfig = ${JSON.stringify(newConfig,null,2)}`);
     updateTinadConfig(newConfig);
-
     invalidate(); // tell SDK to make react-query refetch data since the demo user id was changed
-
   };
   
 
