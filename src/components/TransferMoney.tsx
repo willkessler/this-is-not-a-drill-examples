@@ -11,7 +11,7 @@ export const TransferMoney = () => {
 
         <TinadComponent pageId="transfer" mode="toast" 
           toastProps={{ position:"bottom-left",
-                      autoClose: 2000,
+                      autoClose: false,
                       hideProgressBar: false,
                       rtl: false, 
                       theme: "dark", 
