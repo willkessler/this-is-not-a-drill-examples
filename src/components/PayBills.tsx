@@ -9,6 +9,7 @@ export const PayBills = () => {
 
   const { TINAD_IMAGE_LOCATION } = useEnv();
 
+  // Example of a Custom Template that a client can pass in for inline notifications.
   const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, tinadType, dismiss }) => {
     // You can use the tinadTtype to determine whatever you want to render for each
     // TINAD notification type.

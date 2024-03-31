@@ -8,22 +8,9 @@ const HomePage = () => {
 
   const { TINAD_IMAGE_LOCATION } = useEnv();
 
-  // Example of a Custom Template that a client can pass in for inline notifications.
-  const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, tinadType, dismiss }) => {
-    return (
-      <div style={{ padding: '20px', margin: '10px', backgroundColor: 'white', boxShadow: '0 0 10px rgba(0,0,0,0.1)', width: '100%', borderRadius:'20px' }}>
-        <div style={{ marginBottom: '10px' }}>{tinadContent}</div>
-        <h4 style={{ marginBottom: '10px' }}>{tinadType}</h4>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          {dismiss && <button onClick={dismiss} style={{ marginLeft: 'auto' }}>Dismiss</button>}
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div>
-      <TinadComponent pageId="home" mode="toast" template={CustomTemplate} />
+      <TinadComponent pageId="home" mode="toast" />
 
       <Title style={{marginBottom:'10px'}} me="lg" order={1}>Financial Overview</Title>
 
