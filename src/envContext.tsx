@@ -20,7 +20,7 @@ export const EnvProvider:React.FC<EnvProviderProps> = ({ children }) => {
       try {
         const config = await import('./envConfig');
         setEnv(config.envConfig);
-        console.log('config:', JSON.stringify(config.envConfig,null,2));
+        //console.log('config:', JSON.stringify(config.envConfig,null,2));
       } catch (error) {
         console.error("Couldn't load the environment config", error);
       }

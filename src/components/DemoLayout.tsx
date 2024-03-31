@@ -14,9 +14,10 @@ import ResizeablePanels from './ResizeablePanels';
 
 const DemoLayout = () => {
 
-  const { updateTinadConfig } = useTinadSDK();
-  const { getConfig, reset, invalidate } = useSDKData();
+  const { getTinadConfig, updateTinadConfig } = useTinadSDK();
+  const { reset } = useSDKData();
   const { TINAD_IMAGE_LOCATION } = useEnv();
+  const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
   
   const reloadDemoPanel = () => {
     const demoPanelIframe = document.getElementById('demoPanel');
@@ -35,8 +36,8 @@ const DemoLayout = () => {
     const newConfig = { userId: `user-${newValue}` };
     console.log(`new sdkConfig = ${JSON.stringify(newConfig,null,2)}`);
     updateTinadConfig(newConfig);
-    invalidate(); // tell SDK to make react-query refetch data since the demo user id was changed
-    reloadDemoPanel();
+    setCurrentUserId(newConfig.userId);
+    reloadDemoPanel(); // tell demo app's iframe to reload itself
   };
 
   const handleResetAllViews = async () => {
@@ -68,10 +69,10 @@ const DemoLayout = () => {
             <IconExchange style={{color:'#FFF', marginLeft:'15px'}} />
             <Anchor 
               title="Click to experiment with up to 3 simulated end users."
-              onClick={() => { changeUserId(getConfig().userId) }} 
+              onClick={() => { changeUserId(getTinadConfig().userId) }} 
               underline="never" 
               size="sm">
-              Rotate Signed-In User ({getConfig().userId})
+              Rotate Signed-In User {currentUserId}
             </Anchor>
           </Group>
 

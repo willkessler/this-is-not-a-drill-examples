@@ -29,7 +29,7 @@ export const PayBills = () => {
 
       <Text size="xl">Pay your monthly bills here.</Text>
 
-      <TinadComponent pageId="pay" mode="inline" template={CustomTemplate} />
+      <TinadComponent pageId="pay" mode="inline" environments="Development,Staging" template={CustomTemplate} />
 
       <Group gap="xs" className={classes.mainContent}>
         <Card shadow="sm" p="sm" radius="sm" className={classes.card}>
