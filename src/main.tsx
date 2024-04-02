@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <MantineProvider>
       <EnvProvider>
-        <TinadSDKProvider domains="ex23.iot" environments="Development">
+        <TinadSDKProvider environments="Development">
           <App />
         </TinadSDKProvider>
       </EnvProvider>

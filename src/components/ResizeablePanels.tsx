@@ -67,7 +67,7 @@ const ResizablePanels: React.FC<ResizablePanelsProps> = ({ topPanel, leftPanel, 
           id={rightPanel.iframeId}
           src={rightPanel.url}
           style={{
-            minWidth: rightPanelProps.minWidth | 400,
+            minWidth: rightPanel.minWidth | 400,
             width: `calc(100% - ${dividerPosition}px - 5px)`
           }}
           className={classes.panel}

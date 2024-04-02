@@ -11,8 +11,11 @@ export const EnvProvider:React.FC<EnvProviderProps> = ({ children }) => {
   const [env, setEnv] = useState({
     TINAD_API_BASE_URL: 'http://localhost:8080',
     TINAD_ENDUSER_ID: 'user-1',
-    TINAD_IMAGE_LOCATION: 'https://raw.githubusercontent.com/willkessler/this-is-not-a-drill-examples/main/public/', // in local dev usually served from the public folder which is no path at all.
+    // in local dev usually served from the public folder (ie, no path prefix)
+    TINAD_IMAGE_LOCATION: 'https://raw.githubusercontent.com/willkessler/this-is-not-a-drill-examples/main/public/',
     TINAD_API_KEY: 'OQONv9CK',  // must be set actively to use TINAD
+    TINAD_DASHBOARDPANEL_URL: 'http://localhost:5173',
+    TINAD_DEMOPANEL_URL: 'http://localhost:5174',
   });
 
   useEffect(() => {

@@ -16,7 +16,7 @@ const DemoLayout = () => {
 
   const { getTinadConfig, updateTinadConfig } = useTinadSDK();
   const { reset } = useSDKData();
-  const { TINAD_IMAGE_LOCATION } = useEnv();
+  const { TINAD_IMAGE_LOCATION, TINAD_DEMOPANEL_URL, TINAD_DASHBOARDPANEL_URL } = useEnv();
   const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
   
   const reloadDemoPanel = () => {
@@ -111,9 +111,9 @@ const DemoLayout = () => {
 
   return (
     <ResizeablePanels 
-      topPanelProps =  {{ content: topPanelContent, minHeight:'500px', maxHeight:'800px' }}
-      leftPanelProps = {{ iframeId: 'demoPanel',      url: 'http://localhost:5173', minWidth:'500px', maxWidth:'800px' }}
-      rightPanelProps= {{ iframeId: 'dashboardPanel', url: 'http://localhost:5174', minWidth:'100px' }}
+      topPanel =  {{ content: topPanelContent, minHeight:'500px', maxHeight:'800px' }}
+      leftPanel = {{ iframeId: 'demoPanel',      url: TINAD_DEMOPANEL_URL, minWidth:'500px', maxWidth:'800px' }}
+      rightPanel = {{ iframeId: 'dashboardPanel', url: TINAD_DASHBOARDPANEL_URL, minWidth:'100px' }}
     />
   );
 };

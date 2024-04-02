@@ -7,12 +7,14 @@ import TransferMoney from './TransferMoney';
 import Deposit from './Deposit';
 import Statements from './Statements';
 import DemoLayout from './DemoLayout'; 
+import SimpleDemo from './SimpleDemo'; 
 
 const RouterComponent = () => {
   return (
     <Router>
       <Routes>
         <Route path="/demo" element={<DemoLayout />} />
+        <Route path="/simpledemo" element={<SimpleDemo />} />
         <Route path="/" element={<MainLayout />} >
           <Route index element={<About />} />
           <Route path="dashboard" element={<HomePage />} />
