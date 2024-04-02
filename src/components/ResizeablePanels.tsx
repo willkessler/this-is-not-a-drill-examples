@@ -9,12 +9,12 @@ interface PanelProps {
 }
 
 interface ResizablePanelsProps {
-  top: PanelProps;
-  left: PanelProps;
-  right: PanelProps;
+  topPanel: PanelProps;
+  leftPanel: PanelProps;
+  rightPanel: PanelProps;
 }
 
-const ResizablePanels: React.FC<ResizablePanelsProps> = ({ topPanelProps, leftPanelProps, rightPanelProps }) => {
+const ResizablePanels: React.FC<ResizablePanelsProps> = ({ topPanel, leftPanel, rightPanel }) => {
   const [dividerPosition, setDividerPosition] = useState<number>(500);
   const [ isDragging, setIsDragging ] = useState<boolean>(false); // track if currently dragging
 
@@ -50,22 +50,22 @@ const ResizablePanels: React.FC<ResizablePanelsProps> = ({ topPanelProps, leftPa
 
   return (
     <div className={classes.container}>
-      <div className={classes.topPanel}>{topPanelProps.content}</div>
+      <div className={classes.topPanel}>{topPanel.content}</div>
       <div className={classes.panelsContainer}>
         <iframe
-          id={leftPanelProps.iframeId}
-          src={leftPanelProps.url}
+          id={leftPanel.iframeId}
+          src={leftPanel.url}
           style={{
-            minWidth:(leftPanelProps.minWidth ? leftPanelProps.minWidth : 500),
-            maxWidth:leftPanelProps.maxWidth | 800,
+            minWidth:(leftPanel.minWidth ? leftPanel.minWidth : 500),
+            maxWidth:leftPanel.maxWidth | 800,
             width: `${dividerPosition}px`,
           }}
           className={classes.panel}
           title="Left Panel" />
         <div className={classes.divider} onMouseDown={onMouseDown}></div>
         <iframe
-          id={rightPanelProps.iframeId}
-          src={rightPanelProps.url}
+          id={rightPanel.iframeId}
+          src={rightPanel.url}
           style={{
             minWidth: rightPanelProps.minWidth | 400,
             width: `calc(100% - ${dividerPosition}px - 5px)`
