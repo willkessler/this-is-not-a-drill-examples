@@ -104,9 +104,9 @@ This page is a single spot where you can try out several types of TINAD notifica
         
         <Button variant="outline" size="xs" title="Reset all views on all notifications so you can re-test them." w={150} onClick={handleResetAllViews}>Reset views</Button>
 
-          <Text size="xs" style={{fontStyle:'italic',marginTop:'15px'}}>This demo is part of a larger sample "bank application" demo, which you can access by clicking&nbsp;
-          <Anchor href="/">here</Anchor> (be aware that in Stackblitz, the bank application navigation can be kind of slow, which is why we show you
-          all the possible notification styles here as well).</Text>
+          <Text size="xs" style={{fontStyle:'italic',marginTop:'15px'}}>This demo is part of a larger sample "bank application" demo, which you can access by using the left nav links.
+            Be aware that in Stackblitz, the bank application navigation can be kind of slow, which is why we show you
+            all the possible notification styles here as well.</Text>
 
       </Card>
 

@@ -9,6 +9,19 @@ import Statements from './Statements';
 import DemoLayout from './DemoLayout'; 
 import SimpleDemo from './SimpleDemo'; 
 
+// Function to determine the default page based on an environment variable
+const getDefaultPage = () => {
+  const defaultHomePage = import.meta.env.VITE_DEFAULT_HOMEPAGE; // Reading the environment variable
+  switch(defaultHomePage) {
+    case 'About':
+      return <About />;
+    case 'SimpleDemo':
+      return <SimpleDemo />;
+    default:
+      return <About />; // Fallback to About page if the env var is not set correctly
+  }
+};
+
 const RouterComponent = () => {
   return (
     <Router>
@@ -16,7 +29,7 @@ const RouterComponent = () => {
         <Route path="/demo" element={<DemoLayout />} />
         <Route path="/simpledemo" element={<SimpleDemo />} />
         <Route path="/" element={<MainLayout />} >
-          <Route index element={<About />} />
+          <Route index element={getDefaultPage()} />
           <Route path="dashboard" element={<HomePage />} />
           <Route path="pay" element={<PayBills />} />
           <Route path="transfer" element={<TransferMoney />} />
