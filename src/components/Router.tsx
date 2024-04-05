@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useEnv } from '../envContext';
 import MainLayout from './MainLayout';
 import HomePage from './HomePage';
 import About from './About';
@@ -11,15 +12,13 @@ import SimpleDemo from './SimpleDemo';
 
 // Function to determine the default page based on an environment variable
 const getDefaultPage = () => {
-  const defaultHomePage = import.meta.env.VITE_DEFAULT_HOMEPAGE; // Reading the environment variable
-  switch(defaultHomePage) {
-    case 'About':
-      return <About />;
-    case 'SimpleDemo':
-      return <SimpleDemo />;
-    default:
-      return <About />; // Fallback to About page if the env var is not set correctly
+  const { TINAD_IS_DEMO_SITE } = useEnv();
+
+  if (TINAD_IS_DEMO_SITE) {
+    return <SimpleDemo />;
   }
+  return <About />;
+
 };
 
 const RouterComponent = () => {

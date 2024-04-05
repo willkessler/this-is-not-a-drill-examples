@@ -14,6 +14,7 @@ export const EnvProvider:React.FC<EnvProviderProps> = ({ children }) => {
     // in local dev usually served from the public folder (ie, no path prefix)
     TINAD_IMAGE_LOCATION: 'https://raw.githubusercontent.com/willkessler/this-is-not-a-drill-examples/main/public/',
     TINAD_API_KEY: 'OQONv9CK',  // must be set actively to use TINAD
+    TINAD_DEFAULT_HOMEPAGE: 'About',
     TINAD_DASHBOARDPANEL_URL: 'http://localhost:5173',
     TINAD_DEMOPANEL_URL: 'http://localhost:5174',
   });
