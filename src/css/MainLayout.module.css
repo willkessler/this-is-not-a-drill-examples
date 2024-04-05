@@ -127,3 +127,11 @@
   margin:40px;
   height:100vh;
 }
+
+.simpleCard code {
+  background-color:#3f4;
+  color:#015;
+  font-weight: bold;
+  border: 1px dotted #3f3;
+  padding:3px;
+}
