@@ -3,7 +3,7 @@ import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { Anchor, Card, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
-import { useEnv } from '../envContext';
+import { envConfig } from '../envConfig';
 import {
     IconBook,
     IconExchange,
@@ -16,7 +16,6 @@ const DemoLayout = () => {
 
   const { getTinadConfig, updateTinadConfig } = useTinadSDK();
   const { reset } = useSDKData();
-  const { TINAD_IMAGE_LOCATION, TINAD_DEMOPANEL_URL, TINAD_DASHBOARDPANEL_URL } = useEnv();
   const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
   
   const reloadDemoPanel = () => {
@@ -61,7 +60,7 @@ const DemoLayout = () => {
                 title="This Is Not A Drill! Demo Site"
                 h={30}
                 style={{paddingLeft:'10px'}}
-                src={`${TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`} />
+                src={`${envConfig.TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`} />
             </a>
             <Title title="Use the controls at the right to manage the demo panel in the lower left" order={5}>TINAD Demo Control Panel </Title>
           </Group>
@@ -109,11 +108,13 @@ const DemoLayout = () => {
     </>
   );
 
+  console.log(envConfig.TINAD_DASHBOARDPANEL_URL);
+
   return (
     <ResizeablePanels 
-      topPanel =  {{ content: topPanelContent, minHeight:'500px', maxHeight:'800px' }}
-      leftPanel = {{ iframeId: 'demoPanel',      url: TINAD_DEMOPANEL_URL, minWidth:'500px', maxWidth:'800px' }}
-      rightPanel = {{ iframeId: 'dashboardPanel', url: TINAD_DASHBOARDPANEL_URL, minWidth:'100px' }}
+      topPanel =  {{  content: topPanelContent, minHeight:'500px', maxHeight:'800px' }}
+      leftPanel = {{  iframeId: 'demoPanel',      url: envConfig.TINAD_DEMOPANEL_URL, minWidth:'500px', maxWidth:'800px' }}
+      rightPanel = {{ iframeId: 'dashboardPanel', url: envConfig.TINAD_DASHBOARDPANEL_URL, minWidth:'100px' }}
     />
   );
 };

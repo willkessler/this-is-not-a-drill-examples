@@ -10,7 +10,8 @@ const Navbar = () => {
             <Anchor className={classes.navbarLinks} href="/deposit" fz="md">Make Deposit</Anchor>
             <Anchor className={classes.navbarLinks} href="/transfer" fz="md">Transfer $$</Anchor>
             <Anchor className={classes.navbarLinks} href="/statements" fz="md">Statements</Anchor>
-            <Anchor className={classes.navbarLinks} href="/about" fz="md">About This Demo</Anchor>
+            <Anchor className={classes.lowerNavbarLinks} style={{marginTop:'65px', paddingTop:'25px', borderTop:'1px dotted #99f'}} href="/simpledemo" fz="sm">Quick One-Page TINAD Demo</Anchor>
+            <Anchor className={classes.lowerNavbarLinks} href="/about" fz="sm">About the TINAD Demo Site</Anchor>
           </Stack>
     </>
   );

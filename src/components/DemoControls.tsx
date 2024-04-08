@@ -3,19 +3,19 @@ import { Anchor, Card, Group, Stack, Image , Title } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
+import { envConfig } from '../envConfig';
 import {
     IconBook,
     IconExchange,
     IconRecycle,
     IconMovie,
 } from '@tabler/icons-react';
-import { useEnv } from '../envContext';
 
 const DemoControls = () => {
 
-  const { updateTinadConfig } = useTinadSDK();
-  const { getConfig, reset, invalidate } = useSDKData();
-  const { TINAD_IMAGE_LOCATION } = useEnv();
+  const { getTinadConfig, updateTinadConfig } = useTinadSDK();
+  const { reset, invalidate } = useSDKData();
+  const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
   
   const changeUserId = (lastUserId: string) => {
     console.log(`changeUserId, lastUserId: ${lastUserId}`);
@@ -27,7 +27,7 @@ const DemoControls = () => {
     const newConfig = { userId: `user-${newValue}` };
     console.log(`new sdkConfig = ${JSON.stringify(newConfig,null,2)}`);
     updateTinadConfig(newConfig);
-    invalidate(); // tell SDK to make react-query refetch data since the demo user id was changed
+    setCurrentUserId(newConfig.userId);
   };
   
 
@@ -50,14 +50,14 @@ const DemoControls = () => {
           <a href="https://this-is-not-a-drill.com" target="_blank">
             <Image
               h={80}
-              src={`${TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`} />
+              src={`${envConfig.TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`} />
           </a>
           <Title order={5}><span style={{fontStyle:'italic'}}>This is Not a Drill!</span>&nbsp;&nbsp;Control Panel</Title>
         </Group>
         <Stack>
           <Group>
             <IconExchange style={{color:'#000', marginLeft:'15px'}} />
-            <Anchor onClick={() => { changeUserId(getConfig().userId) }} underline="never" size="sm" style={{marginLeft:'-8px', color:'#000'}}>Rotate Signed-In User ({getConfig().userId})</Anchor>
+            <Anchor onClick={() => { changeUserId(getTinadConfig().userId) }} underline="never" size="sm" style={{marginLeft:'-8px', color:'#000'}}>Rotate Signed-In User ({getTinadConfig().userId})</Anchor>
           </Group>
 
           <Group>

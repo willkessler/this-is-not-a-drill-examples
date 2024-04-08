@@ -4,7 +4,7 @@ import { Anchor, Button, Card, Code, Group, Image, Radio, Text, Title } from '@m
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
-import { useEnv } from '../envContext';
+import { envConfig } from '../envConfig';
 import { Bounce, Slide } from 'react-toastify';
 
 
@@ -12,7 +12,6 @@ type DemoType = 'defaultInline' | 'customTemplateInline' | 'modal' | 'defaultToa
 
 export const SimpleDemo = () => {
 
-  const { TINAD_IMAGE_LOCATION } = useEnv();
   const [ demoType, setDemoType ] = useState<DemoType>('defaultInline');
   const { reset } = useSDKData();
 
@@ -48,7 +47,7 @@ export const SimpleDemo = () => {
       <Card shadow="sm" padding="md" radius="md" withBorder className={classes.simpleCard}>
         <Group justify="flex-start">
           <Image
-            src={`${TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`}
+            src={`${envConfig.TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`}
             w={130}
           />
           <Title order={4}>This is Not A Drill! (TINAD) Simple Demos Page</Title>

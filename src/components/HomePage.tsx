@@ -2,11 +2,9 @@ import { Card, Image, Stack, Text, Title, Group } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
-import { useEnv } from '../envContext';
+import { envConfig } from '../envConfig';
   
 const HomePage = () => {
-
-  const { TINAD_IMAGE_LOCATION } = useEnv();
 
   return (
     <div>
@@ -21,7 +19,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src={`${TINAD_IMAGE_LOCATION}CheckingAccountIcon.webp`} />
+                src={`${envConfig.TINAD_IMAGE_LOCATION}CheckingAccountIcon.webp`} />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Checking Account</Text>
@@ -36,7 +34,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src={`${TINAD_IMAGE_LOCATION}SavingsAccountIcon.webp`} />
+                src={`${envConfig.TINAD_IMAGE_LOCATION}SavingsAccountIcon.webp`} />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Savings Account</Text>
@@ -51,7 +49,7 @@ const HomePage = () => {
               <Image 
                 radius="md"
                 h={80}
-                src={`${TINAD_IMAGE_LOCATION}PortfolioIcon.webp`} />
+                src={`${envConfig.TINAD_IMAGE_LOCATION}PortfolioIcon.webp`} />
             </div>
             <Stack align="left" justify="flex-end" gap="xs">
                <Text className={classes.cardText}>Investment Portfolio</Text>

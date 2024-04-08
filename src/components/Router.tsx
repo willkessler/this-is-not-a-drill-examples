@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useEnv } from '../envContext';
+import { envConfig } from '../envConfig';
 import MainLayout from './MainLayout';
 import HomePage from './HomePage';
 import About from './About';
@@ -12,9 +12,7 @@ import SimpleDemo from './SimpleDemo';
 
 // Function to determine the default page based on an environment variable
 const getDefaultPage = () => {
-  const { TINAD_IS_DEMO_SITE } = useEnv();
-
-  if (TINAD_IS_DEMO_SITE) {
+  if (envConfig.TINAD_IS_STACKBLITZ_PLAYGROUND === 'true') {
     return <SimpleDemo />;
   }
   return <About />;
@@ -26,9 +24,9 @@ const RouterComponent = () => {
     <Router>
       <Routes>
         <Route path="/demo" element={<DemoLayout />} />
-        <Route path="/simpledemo" element={<SimpleDemo />} />
         <Route path="/" element={<MainLayout />} >
           <Route index element={getDefaultPage()} />
+          <Route path="simpledemo" element={<SimpleDemo />} />
           <Route path="dashboard" element={<HomePage />} />
           <Route path="pay" element={<PayBills />} />
           <Route path="transfer" element={<TransferMoney />} />

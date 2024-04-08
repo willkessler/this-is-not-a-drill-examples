@@ -4,22 +4,20 @@ import classes from '../css/MainLayout.module.css';
 import {
   IconMenu2
 } from '@tabler/icons-react';
-import { useEnv } from '../envContext';
+import { envConfig } from '../envConfig';
 
 const goHome = () => {
   window.location.assign('/home');
 }
 
 export const About = () => {
-  const { TINAD_IMAGE_LOCATION } = useEnv();
-
   return (
     <>
 
       <Card shadow="sm" padding="md" radius="md" withBorder className={classes.aboutCard}>
         <Group justify="flex-start">
           <Image
-            src={`${TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`}
+            src={`${envConfig.TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`}
             w={130}
           />
           <Title order={4}>This is Not A Drill! (TINAD) Playground</Title>

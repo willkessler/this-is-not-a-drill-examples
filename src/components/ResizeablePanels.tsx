@@ -48,6 +48,7 @@ const ResizablePanels: React.FC<ResizablePanelsProps> = ({ topPanel, leftPanel, 
     }
   }, [isDragging]);
 
+  console.log(`ResizablePanels ${leftPanel.url}, ${rightPanel.url}`);
   return (
     <div className={classes.container}>
       <div className={classes.topPanel}>{topPanel.content}</div>

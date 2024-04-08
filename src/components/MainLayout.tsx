@@ -1,5 +1,5 @@
 import { AppShell, Stack } from '@mantine/core';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css';
@@ -8,20 +8,21 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import DemoControls from './DemoControls';
-import { useEnv } from '../envContext';
+import { envConfig } from '../envConfig';
+
 
 const MainLayout = () => {
   const [opened, { toggle }] = useDisclosure();
-  const { TINAD_IS_DEMO_SITE } = useEnv();
+  const [ demoControls, setDemoControls ] = useState(<></>);
 
-  let demoControls = (<></>);
   useEffect(() => {
-    if (TINAD_IS_DEMO_SITE) {
-      demoControls = (
+    if (envConfig.TINAD_IS_STACKBLITZ_PLAYGROUND !== 'true') {
+      console.log('Adding democontrols');
+      setDemoControls(
         <DemoControls />
-      )
+      );
     }
-  }, [useEnv, TINAD_IS_DEMO_SITE]);
+  }, [envConfig]);
   
   return (
     <AppShell
