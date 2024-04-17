@@ -32,7 +32,16 @@ export const EnvProvider: React.FC<EnvProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const loadEnv = async () => {
-      let tinadConfig = {};
+      let tinadConfig = { 
+        apiKey: '',
+        apiBaseUrl: '',
+        userId: '',
+        env: {
+          tinadDemoPanelUrl: '',
+          tinadDashboardUrl: '',
+          tinadImageLocation: '',
+        },
+      };
       const tinadConfigStr = localStorage.getItem('tinad');
       if (tinadConfigStr) {
         tinadConfig = JSON.parse(tinadConfigStr);

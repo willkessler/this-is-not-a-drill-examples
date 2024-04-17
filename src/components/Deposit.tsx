@@ -1,6 +1,6 @@
 import '@mantine/core/styles.css';
 import { Title, Text } from '@mantine/core';
-import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
+import { TinadComponent } from '@this-is-not-a-drill/react-ui';
 
 export const Deposit = () => {
     return (

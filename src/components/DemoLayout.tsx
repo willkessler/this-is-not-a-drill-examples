@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '@mantine/core/styles.css';
-import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
-import { Anchor, Card, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Group, Image, Title } from '@mantine/core';
 import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
 import { envConfig } from '../envConfig';
 import {
@@ -19,7 +18,7 @@ const DemoLayout = () => {
   const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
   
   const reloadDemoPanel = () => {
-    const demoPanelIframe = document.getElementById('demoPanel');
+    const demoPanelIframe = document.getElementById('demoPanel') as HTMLIFrameElement;
     if (demoPanelIframe && demoPanelIframe.contentWindow) {
       demoPanelIframe.contentWindow.postMessage('RELOAD_IFRAME', window.location.origin);
     }
@@ -27,8 +26,8 @@ const DemoLayout = () => {
   
   const changeUserId = (lastUserId: string) => {
     console.log(`changeUserId, lastUserId: ${lastUserId}`);
-    const [ userName, userNumber ] = lastUserId.split('-');
-    let newValue = (parseInt(userNumber) + 1);
+    const userParts = lastUserId.split('-');
+    let newValue = (parseInt(userParts[1]) + 1);
     if (newValue > 3) {
       newValue = 1;
     }
@@ -112,9 +111,9 @@ const DemoLayout = () => {
 
   return (
     <ResizeablePanels 
-      topPanel =  {{  content: topPanelContent, minHeight:'500px', maxHeight:'800px' }}
-      leftPanel = {{  iframeId: 'demoPanel',      url: envConfig.TINAD_DEMOPANEL_URL, minWidth:'500px', maxWidth:'800px' }}
-      rightPanel = {{ iframeId: 'dashboardPanel', url: envConfig.TINAD_DASHBOARDPANEL_URL, minWidth:'100px' }}
+      topPanel =  {{  content: topPanelContent }}
+      leftPanel = {{  iframeId: 'demoPanel',      url: envConfig.TINAD_DEMOPANEL_URL, minWidth:500, maxWidth:800 }}
+      rightPanel = {{ iframeId: 'dashboardPanel', url: envConfig.TINAD_DASHBOARDPANEL_URL, minWidth:100 }}
     />
   );
 };

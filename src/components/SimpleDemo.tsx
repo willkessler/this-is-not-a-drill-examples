@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '@mantine/core/styles.css';
-import { Anchor, Button, Card, Code, Group, Image, Radio, Text, Title } from '@mantine/core';
+import { Button, Card, Code, Group, Image, Radio, Text, Title } from '@mantine/core';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
-import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
+import { useSDKData } from '@this-is-not-a-drill/react-core';
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
 import { envConfig } from '../envConfig';
-import { Bounce, Slide } from 'react-toastify';
+import { Slide } from 'react-toastify';
 
 
 type DemoType = 'defaultInline' | 'customTemplateInline' | 'modal' | 'defaultToast' | 'customToast';

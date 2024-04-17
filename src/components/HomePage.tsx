@@ -1,7 +1,7 @@
 import { Card, Image, Stack, Text, Title, Group } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
-import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
+import { TinadComponent } from '@this-is-not-a-drill/react-ui';
 import { envConfig } from '../envConfig';
   
 const HomePage = () => {

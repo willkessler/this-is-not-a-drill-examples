@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Anchor, Card, Group, Stack, Image , Title } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
@@ -14,20 +13,18 @@ import {
 const DemoControls = () => {
 
   const { getTinadConfig, updateTinadConfig } = useTinadSDK();
-  const { reset, invalidate } = useSDKData();
-  const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
+  const { reset } = useSDKData();
   
   const changeUserId = (lastUserId: string) => {
     console.log(`changeUserId, lastUserId: ${lastUserId}`);
-    const [ userName, userNumber ] = lastUserId.split('-');
-    let newValue = (parseInt(userNumber) + 1);
+    const userParts = lastUserId.split('-');
+    let newValue = (parseInt(userParts[1]) + 1);
     if (newValue > 3) {
       newValue = 1;
     }
     const newConfig = { userId: `user-${newValue}` };
     console.log(`new sdkConfig = ${JSON.stringify(newConfig,null,2)}`);
     updateTinadConfig(newConfig);
-    setCurrentUserId(newConfig.userId);
   };
   
 

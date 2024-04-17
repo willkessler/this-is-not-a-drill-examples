@@ -1,36 +1,19 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import '@mantine/core/styles.css';
 import RouterComponent from './Router';
 import { envConfig } from '../envConfig';
-import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
+import { useTinadSDK } from '@this-is-not-a-drill/react-core';
 
 const App = () => {
 
   const { getTinadConfig, updateTinadConfig } = useTinadSDK();
-
-  const getQueryParam = (param:string) => {
-    const search = window.location.search.substring(1); // Remove '?' prefix
-    const params = search.split('&');
-
-    for (let i = 0; i < params.length; i++) {
-      const pair = params[i].split('=');
-      if (decodeURIComponent(pair[0]) === param) {
-        return decodeURIComponent(pair[1]);
-      }
-    }
-
-    return null;
-  };
-
-  //  const apiKey = getQueryParam('apiKey');
-  //  console.log('apiKey from URL:', apiKey);
 
   useEffect(() => {
 
     console.log(`App useEffect ${new Date().getTime()}`);
     // listen for postMessage "reload" events sent by another demo panel.
     // These are sent when the demo user decides to change end users or reset views.
-    const handlePostMessage = event => {
+    const handlePostMessage = (event:MessageEvent) => {
       if (event.origin !== window.location.origin) {
         return; // ignore unknown origin messages
       }

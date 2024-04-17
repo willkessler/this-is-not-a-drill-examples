@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, JSXElement } from 'react';
 import classes from '../css/ResizablePanels.module.css'; // Assuming you are using CSS modules
 
 interface PanelProps {
     url?: string;
-    content?: string;
-    minSize: number;
-    maxSize: number;
+    iframeId?: string,
+    content?: string | JSXElement;
+    minWidth?: number;
+    maxWidth?: number;
 }
 
 interface ResizablePanelsProps {
