@@ -10,6 +10,10 @@ import { Slide } from 'react-toastify';
 
 type DemoType = 'defaultInline' | 'customTemplateInline' | 'modal' | 'defaultToast' | 'customToast';
 
+function isValidDemoType(value: any): value is DemoType {
+  return ['defaultInline', 'customTemplateInline', 'modal', 'defaultToast', 'customToast'].includes(value);
+}
+
 export const SimpleDemo = () => {
 
   const [ demoType, setDemoType ] = useState<DemoType>('defaultInline');
@@ -54,29 +58,31 @@ export const SimpleDemo = () => {
         </Group>
 
         { demoType == 'defaultInline' && (
-            <TinadComponent pageId="simple" mode="inline" environments="Development,Staging" />
+            <TinadComponent pageId="simple" mode="inline" />
         ) }
 
         { demoType == 'customTemplateInline' && (
-            <TinadComponent pageId="simple" mode="inline" environments="Development,Staging" template={CustomTemplate} />
+            <TinadComponent pageId="simple" mode="inline" template={CustomTemplate} />
         ) }
 
         { demoType == 'modal' && (
-            <TinadComponent pageId="simple" mode="modal" environments="Development,Staging" />
+            <TinadComponent pageId="simple" mode="modal" />
         ) }
 
         { demoType == 'defaultToast' && (
-            <TinadComponent pageId="simple" mode="toast" environments="Development,Staging" toastProps={{ autoClose:false}} />
+            <TinadComponent pageId="simple" mode="toast" toastProps={{ autoClose:false }} />
         ) }
 
         { demoType == 'customToast' && (
-            <TinadComponent pageId="simple" mode="toast" environments="Development,Staging"
-            toastProps={{ position:"bottom-left",
-                      autoClose: false,
-                      hideProgressBar: false,
-                      rtl: false, 
-                      theme: "dark", 
-                      transition: Slide }}
+            <TinadComponent 
+              pageId="simple" 
+              mode="toast" 
+              toastProps={{ position:"bottom-left",
+                            autoClose: false,
+                            hideProgressBar: false,
+                            rtl: false, 
+                            theme: "dark", 
+                            transition: Slide }}
             />
         ) }
           
@@ -91,7 +97,11 @@ export const SimpleDemo = () => {
           name="DemoType"
           withAsterisk
           value={demoType}
-          onChange={setDemoType}
+          onChange={(value) => {
+            if (isValidDemoType(value)) {
+              setDemoType(value);
+            }
+          }}
           size="xs"
         >
           <Group>

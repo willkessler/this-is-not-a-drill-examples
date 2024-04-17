@@ -16,7 +16,7 @@ export const TransferMoney = () => {
                         rtl: false, 
                         theme: "dark", 
                         transition: Slide }}
-          environments="Development,Staging" />
+        />
         </>
   );
 }

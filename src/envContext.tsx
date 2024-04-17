@@ -50,13 +50,13 @@ export const EnvProvider: React.FC<EnvProviderProps> = ({ children }) => {
         const config = await import('./envConfig');
         setEnv(config.envConfig);
         tinadConfig.env = {
-          tinadDemoPanelUrl: config.TINAD_DEMOPANEL_URL,
-          tinadDashboardUrl: config.TINAD_DASHBOARDPANEL_URL,
-          tinadImageLocation: config.TINAD_IMAGE_LOCATION,
+          tinadDemoPanelUrl: config.envConfig.TINAD_DEMOPANEL_URL,
+          tinadDashboardUrl: config.envConfig.TINAD_DASHBOARDPANEL_URL,
+          tinadImageLocation: config.envConfig.TINAD_IMAGE_LOCATION,
         }
-        tinadConfig.apiKey = config.TINAD_API_KEY;
-        tinadConfig.apiBaseUrl = config.TINAD_API_BASE_URL;
-        tinadConfig.userId = config.TINAD_ENDUSER_ID;
+        tinadConfig.apiKey = config.envConfig.TINAD_API_KEY;
+        tinadConfig.apiBaseUrl = config.envConfig.TINAD_API_BASE_URL;
+        tinadConfig.userId = config.envConfig.TINAD_ENDUSER_ID;
         localStorage.setItem('tinad', JSON.stringify(tinadConfig));
       } catch (error) {
         console.error("Couldn't load the environment config", error);

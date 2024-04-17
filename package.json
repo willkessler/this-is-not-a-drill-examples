@@ -20,6 +20,7 @@
     "@this-is-not-a-drill/react-core": "latest",
     "@this-is-not-a-drill/react-ui": "latest",
     "@types/jest": "^27.5.2",
+    "@types/lodash": "^4.17.0",
     "@types/node": "^16.18.83",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",

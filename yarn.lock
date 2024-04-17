@@ -944,7 +944,7 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@this-is-not-a-drill/react-core@^1.0.2", "@this-is-not-a-drill/react-core@^1.0.5":
+"@this-is-not-a-drill/react-core@^1.0.2":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@this-is-not-a-drill/react-core/-/react-core-1.0.5.tgz#dff861ab286c68cfc39df037e106d4e0d9ba2022"
   integrity sha512-52UtsQap8mR0Kr98bdtuYVLckbDxUUY8muX/7vyp0Z+AIAOTHHKGfSgMiKKgBWMNQD42QXhRve/KxRAxHdNiDg==
@@ -963,10 +963,28 @@
     typescript "^5.3.3"
     uuid "^9.0.1"
 
-"@this-is-not-a-drill/react-ui@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@this-is-not-a-drill/react-ui/-/react-ui-1.0.7.tgz#c29ef477e1276607d75f11952e39eea4804d1ff9"
-  integrity sha512-Hsbe3eKg2bh23MYvomT0lSQJsfUMFZd3Ahu9lFxIg+TvXZ4bQjGxmVg0kMqWfIy5weY8SPlvUzrwt7xCGCZKHQ==
+"@this-is-not-a-drill/react-core@latest":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@this-is-not-a-drill/react-core/-/react-core-1.0.11.tgz#be66d3d85358ef4d4884ab8d1f69274b384f0e30"
+  integrity sha512-CEpHPKbbjc0AATP7w3bZlkW8yqwR063ndscqWD9hbJuWUdEt3ewFm90Y3/hyN8eq3TdrsdHC+z07fU4pnLxyHQ==
+  dependencies:
+    "@rollup/plugin-commonjs" "^25.0.7"
+    "@rollup/plugin-node-resolve" "^15.2.3"
+    "@rollup/plugin-typescript" "^11.1.6"
+    "@stackblitz/sdk" "^1.9.0"
+    axios "^1.6.7"
+    openapi-typescript "^7.0.0-next.7"
+    react "^18.2.0"
+    rollup "^4.12.0"
+    rollup-plugin-analyzer "^4.0.0"
+    tsc "^2.0.4"
+    typescript "^5.3.3"
+    uuid "^9.0.1"
+
+"@this-is-not-a-drill/react-ui@latest":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@this-is-not-a-drill/react-ui/-/react-ui-1.0.9.tgz#872e0abbc83225dd083a70ea1a2d73c1deea79a8"
+  integrity sha512-5ZN9KPrMPiM8LXVGwUOPYGE9v4S4mbbciIpE+2zmWGW68fysmAA8cgPoyTBrmesj2Nk5ypwSWrukmBV4+cTbeA==
   dependencies:
     "@codesandbox/sandpack-react" "^2.13.5"
     "@rollup/plugin-commonjs" "^25.0.7"
@@ -1057,6 +1075,11 @@
   version "7.0.15"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.15.tgz#596a1747233694d50f6ad8a7869fcb6f56cf5841"
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
+
+"@types/lodash@^4.17.0":
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.0.tgz#d774355e41f372d5350a4d0714abb48194a489c3"
+  integrity sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==
 
 "@types/mdast@^4.0.0":
   version "4.0.3"
