@@ -4,10 +4,8 @@ import { Anchor, Group, Image, Title } from '@mantine/core';
 import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
 import { envConfig } from '../envConfig';
 import {
-    IconBook,
     IconExchange,
     IconRecycle,
-    IconMovie,
 } from '@tabler/icons-react';
 import ResizeablePanels from './ResizeablePanels';
 

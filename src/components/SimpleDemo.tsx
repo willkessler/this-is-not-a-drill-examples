@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '@mantine/core/styles.css';
-import { Button, Card, Code, Group, Image, Radio, Text, Title } from '@mantine/core';
+import { Button, Card, Group, Image, Radio, Text, Title } from '@mantine/core';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { useSDKData } from '@this-is-not-a-drill/react-core';
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
