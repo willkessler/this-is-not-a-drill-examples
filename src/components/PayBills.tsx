@@ -12,10 +12,9 @@ export const PayBills = () => {
     // TINAD notification type.
     return (
       <div style={{ padding: '20px', backgroundColor: 'white', boxShadow: '0 0 10px rgba(0,0,0,0.1)', width: '100%', borderRadius:'10px' }}>
-        <div style={{ marginBottom: '10px' }}>Contents: {tinadContent}</div>
-        <div>Type: {tinadType}</div>
+        <div style={{ marginBottom: '10px' }}>{tinadContent}</div>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          {dismiss && <button onClick={dismiss} style={{ marginLeft: 'auto' }}>Dismiss</button>}
+          {dismiss && <button onClick={dismiss} style={{ marginLeft: 'auto' }}>OK!</button>}
         </div>
       </div>
     );
