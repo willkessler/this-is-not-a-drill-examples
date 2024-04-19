@@ -6,11 +6,11 @@ import { Slide } from 'react-toastify';
 export const TransferMoney = () => {
     return (
         <>
-          <Title>Transfer Money</Title>
-        <Text size="xl">This is where you can set up money transfers, wires, and ACH payments.</Text>
+          <Title>Transfer Funds</Title>
+        <Text size="xl">Set up money transfers, wires, ACH payments, Zelle, and more right from this page.</Text>
 
         <TinadComponent pageId="transfer" mode="toast" 
-          toastProps={{ position:"bottom-left",
+          toastProps={{ position:"top-right",
                         autoClose: false,
                         hideProgressBar: false,
                         rtl: false, 

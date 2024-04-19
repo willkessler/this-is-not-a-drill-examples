@@ -87,7 +87,7 @@ export const SimpleDemo = () => {
         ) }
           
         <Text size="sm" style={{marginTop:'10px'}}>
-          Using this demo page, you can try out several types of TINAD notifications. Just create some notifications in the TINAD dashboard where you have set the <Code>pageId</Code> to: <Code>simple</Code>, and they will appear here within a few seconds.</Text>
+          Using this demo page, you can try out several types of TINAD notifications. Just create some notifications in the TINAD dashboard (to your right), and they will appear here within a few seconds.</Text>
           <br />
           <Text size="sm">Use the radio buttons (below) to select different notification styles. After a notification is dismissed, you can bring it (and all other notifications) back by clicking the Reset Views button.
         </Text>

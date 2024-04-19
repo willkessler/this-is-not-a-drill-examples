@@ -70,7 +70,7 @@ const DemoLayout = () => {
               onClick={() => { changeUserId(getTinadConfig().userId) }} 
               underline="never" 
               size="sm">
-              Rotate Signed-In User {currentUserId}
+              Change Signed-In User (current: {currentUserId})
             </Anchor>
           </Group>
 
@@ -80,10 +80,10 @@ const DemoLayout = () => {
               title="Reset all user histories so you can simulate starting from scratch to review previous notifications."
               size="sm" 
               onClick={handleResetAllViews} >
-              Reset Views (all users)
+              Reset All User Views
             </Anchor>
           </Group>
-
+{/*
           <Group >
             <IconMovie />
             <Anchor
@@ -92,7 +92,6 @@ const DemoLayout = () => {
               Watch Tutorial
             </Anchor>
           </Group>
-
           <Group>
             <IconBook />
             <Anchor
@@ -103,7 +102,9 @@ const DemoLayout = () => {
               View Docs
             </Anchor>
           </Group>
+*/}
         </Group>
+
     </>
   );
 
