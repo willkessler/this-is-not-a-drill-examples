@@ -7,7 +7,7 @@ import { envConfig } from '../envConfig';
 export const PayBills = () => {
 
   // Example of a Custom Template that a client can pass in for inline notifications.
-  const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, tinadType, dismiss }) => {
+  const CustomTemplate: React.FC<TinadTemplateProps> = ({ tinadContent, dismiss }) => {
     // You can use the tinadTtype to determine whatever you want to render for each
     // TINAD notification type.
     return (
