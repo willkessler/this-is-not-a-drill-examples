@@ -965,7 +965,7 @@
     typescript "^5.3.3"
     uuid "^9.0.1"
 
-"@this-is-not-a-drill/react-ui@^1.0.15":
+"@this-is-not-a-drill/react-ui@latest":
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/@this-is-not-a-drill/react-ui/-/react-ui-1.0.15.tgz#04dc28b467dfec678b878769ff0b58aaa6b163bc"
   integrity sha512-H2K0beN7R7I7suwPTfYEu6UYN9fXYR+qj0orYDsnQ2XbRIaB8sZ6qLYviHupgMiHG0iQu4h8WaVKm5PmZkbcPg==
