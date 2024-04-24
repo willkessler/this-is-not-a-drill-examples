@@ -1,5 +1,5 @@
 import { FC, useEffect, useState, ReactNode } from 'react';
-import classes from '../css/ResizablePanels.module.css'; // Assuming you are using CSS modules
+import classes from '../css/ResizablePanels.module.css';
 
 interface PanelProps {
     url?: string;

@@ -83,7 +83,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .panel {
-    height: calc(100vh - 55px); /* Adjust the height minus the top panel's height */
+/*    height: calc(100vh - 10px); /* Adjust the height minus the top panel's height */
   }
 
   .panelsContainer {
@@ -99,4 +99,11 @@
     flex-wrap: wrap; /* Allow items to wrap in smaller screens */
   }
 
+  .upperPanel {
+    height:60%;
+  }
+
+  .lowerPanel {
+    height: 40%;
+  }
 }

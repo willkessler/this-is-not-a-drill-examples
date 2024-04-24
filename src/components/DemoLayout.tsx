@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '@mantine/core/styles.css';
 import { Anchor, Group, Image, Title } from '@mantine/core';
 import { useTinadSDK, useSDKData } from '@this-is-not-a-drill/react-core';
+import classes from '../css/ResizablePanels.module.css';
 import { envConfig } from '../envConfig';
 import {
     IconExchange,
@@ -14,7 +15,21 @@ const DemoLayout = () => {
   const { getTinadConfig, updateTinadConfig } = useTinadSDK();
   const { reset } = useSDKData();
   const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   
+  useEffect(() => { 
+    const mediaQuery = window.matchMedia('(max-width: 768px)'); 
+    setIsSmallScreen(mediaQuery.matches); 
+    function handleResize() { 
+      setIsSmallScreen(mediaQuery.matches);
+    }
+    // Listen for changes
+    mediaQuery.addListener(handleResize); 
+
+    // Cleanup the listener on component unmount 
+    return () => mediaQuery.removeListener(handleResize); 
+  }, []);
+
   const reloadDemoPanel = () => {
     const demoPanelIframe = document.getElementById('demoPanel') as HTMLIFrameElement;
     if (demoPanelIframe && demoPanelIframe.contentWindow) {
@@ -108,13 +123,40 @@ const DemoLayout = () => {
 
   console.log(envConfig.TINAD_DASHBOARDPANEL_URL);
 
-  return (
-    <ResizeablePanels 
+  if (isSmallScreen) {
+    return (
+      <div className={classes.container}>
+        <div className={classes.panelsContainer}>
+          <iframe
+            id="demoPanel"
+            src={envConfig.TINAD_DEMOPANEL_URL}
+            style={{
+              minWidth:400,
+              maxWidth:800,
+            }}
+            className={classes.upperPanel}
+            title="Left Panel" 
+          />
+          <iframe
+            id="dashboardPanel"
+            src={envConfig.TINAD_DASHBOARDPANEL_URL}
+            style={{
+              minWidth: 400,
+            }}
+            className={classes.lowerPanel}
+            title="Right Panel" />
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <ResizeablePanels 
       topPanel =  {{  content: topPanelContent }}
       leftPanel = {{  iframeId: 'demoPanel',      url: envConfig.TINAD_DEMOPANEL_URL, minWidth: 400, maxWidth:800 }}
       rightPanel = {{ iframeId: 'dashboardPanel', url: envConfig.TINAD_DASHBOARDPANEL_URL, minWidth:400 }}
-    />
-  );
+      />
+    )
+  }
 };
 
 export default DemoLayout;

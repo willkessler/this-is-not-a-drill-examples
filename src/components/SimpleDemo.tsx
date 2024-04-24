@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '@mantine/core/styles.css';
-import { Button, Card, Group, Image, Radio, Text, Title } from '@mantine/core';
+import { Button, Card, Group, Image, Tabs, Text, Title } from '@mantine/core';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
 import { useSDKData } from '@this-is-not-a-drill/react-core';
 import { TinadComponent, TinadTemplateProps } from '@this-is-not-a-drill/react-ui';
@@ -16,7 +16,7 @@ function isValidDemoType(value: any): value is DemoType {
 
 export const SimpleDemo = () => {
 
-  const [ demoType, setDemoType ] = useState<DemoType>('defaultInline');
+  const [ demoType, setDemoType ] = useState<DemoType>('defaultToast');
   const { reset } = useSDKData();
 
   // This function allows you to reset all views (just for this demo) because toasts auto dismiss.
@@ -54,7 +54,7 @@ export const SimpleDemo = () => {
             src={`${envConfig.TINAD_IMAGE_LOCATION}ThisIsNotADrill_cutout.png`}
             w={130}
           />
-          <Title order={4}>This is Not A Drill! (TINAD) Simple Demos Page</Title>
+          <Title style={{marginBottom:'10px'}} order={5}>This is Not A Drill! Basic Demos Page</Title>
         </Group>
 
         { demoType == 'defaultInline' && (
@@ -86,37 +86,54 @@ export const SimpleDemo = () => {
             />
         ) }
           
-        <Text size="sm" style={{marginTop:'10px'}}>
-          Using this demo page, you can try out several types of TINAD notifications. Just create some notifications in the TINAD dashboard (to your right), and they will appear here within a few seconds.</Text>
-          <br />
-          <Text size="sm">Use the radio buttons (below) to select different notification styles. After a notification is dismissed, you can bring it (and all other notifications) back by clicking the Reset Views button.
-        </Text>
+        <Title style={{paddingTop:'15px'}} order={6}>Available Notification Styles:</Title>
+        <Card>
+          <Tabs 
+            defaultValue="defaultToast" 
+            variant="pills"
+            orientation="vertical" 
+            value={demoType}
+            onChange={(value) => {
+              if (isValidDemoType(value)) {
+                setDemoType(value);
+              }
+            }}
+          >
+            <Tabs.List>
+              <Tabs.Tab value="defaultToast">
+                Toast &mdash; Default Format
+              </Tabs.Tab>
+              <Tabs.Tab value="customToast">
+                Toast &mdash; Custom Format
+              </Tabs.Tab>
+              <Tabs.Tab value="defaultInline">
+                Inline &mdash; Default Format
+              </Tabs.Tab>
+              <Tabs.Tab value="customTemplateInline">
+                Inline &mdash; Customized Format
+              </Tabs.Tab>
+              <Tabs.Tab value="modal">
+                Modal
+              </Tabs.Tab>
+            </Tabs.List>
+          </Tabs>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          title="Reset all views on all notifications so you can re-test them." 
+          onClick={handleResetAllViews}>Reset available notifications
+        </Button>
 
-        <Title style={{paddingTop:'15px'}} order={5}>Available Notification Styles:</Title>
-        <Radio.Group style={{margin:'15px'}}
-          name="DemoType"
-          withAsterisk
-          value={demoType}
-          onChange={(value) => {
-            if (isValidDemoType(value)) {
-              setDemoType(value);
-            }
-          }}
-          size="xs"
-        >
-          <Group>
-            <Radio value='defaultInline' label="Default (Inline)" />
-            <Radio value='customTemplateInline' label="Custom Template (Inline)" />
-            <Radio value='modal' label="Modal" />
-            <Radio value='defaultToast' label="Default Toast" />
-            <Radio value='customToast' label="Custom Toast" />
-          </Group>
-        </Radio.Group>
+        </Card>
+
+        <Text size="sm" style={{marginTop:'10px'}}>
+          Create some general notifications in the dashboard, and they will appear here within a few seconds. When you click "Reset" above, any previously dismissed notificatons will be displayed again.
+        </Text>
         
-        <Button variant="outline" size="xs" title="Reset all views on all notifications so you can re-test them." w={150} onClick={handleResetAllViews}>Reset views</Button>
+
 
           <Text size="xs" style={{fontStyle:'italic',marginTop:'15px'}}>This demo is part of a larger sample "bank application" demo, which you can access by using the left nav links.
-            Be aware that in Stackblitz, the bank application navigation can be kind of slow, which is why we show you
+            In Stackblitz, the main sample bank application navigation can be slow to load, which is why we show you
             all the possible notification styles here as well.</Text>
 
       </Card>

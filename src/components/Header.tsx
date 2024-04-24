@@ -21,7 +21,7 @@ const Header:React.FC<HeaderProps> = ({opened, toggle}) => {
             <a href="/home">
           <Image 
             me="xs"
-            h={250}
+            h={220}
             src={`${envConfig.TINAD_IMAGE_LOCATION}UnifiedTextLogo2.png`} />
             </a>
        </Group>
