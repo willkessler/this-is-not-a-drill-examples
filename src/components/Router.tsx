@@ -12,7 +12,7 @@ import SimpleDemo from './SimpleDemo';
 
 // Function to determine the default page based on an environment variable
 const getDefaultPage = () => {
-  if (envConfig.TINAD_IS_STACKBLITZ_PLAYGROUND === 'true') {
+  if (envConfig.TINAD_IS_STACKBLITZ_PLAYGROUND !== 'true') {
     return <SimpleDemo />;
   }
   return <About />;
