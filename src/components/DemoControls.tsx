@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Anchor, Card, Group, Stack, Image , Title } from '@mantine/core';
 import '@mantine/core/styles.css';
 import classes from '../css/MainLayout.module.css'; // Adjust the path as necessary
@@ -13,6 +14,8 @@ import {
 const DemoControls = () => {
 
   const { getTinadConfig, updateTinadConfig } = useTinadSDK();
+  const [ currentUserId, setCurrentUserId ] = useState<string>(getTinadConfig().userId);
+
   const { reset } = useSDKData();
   
   const changeUserId = (lastUserId: string) => {
@@ -24,6 +27,7 @@ const DemoControls = () => {
     }
     const newConfig = { userId: `user-${newValue}` };
     console.log(`new sdkConfig = ${JSON.stringify(newConfig,null,2)}`);
+    setCurrentUserId(newConfig.userId);
     updateTinadConfig(newConfig);
   };
   
@@ -34,7 +38,6 @@ const DemoControls = () => {
     try {
       await reset();
       console.log('Views reset successfully');
-      window.location.reload();
     } catch (error) {
       console.log('Failed to reset views:', error);
     }
@@ -54,7 +57,14 @@ const DemoControls = () => {
         <Stack>
           <Group>
             <IconExchange style={{color:'#000', marginLeft:'15px'}} />
-            <Anchor onClick={() => { changeUserId(getTinadConfig().userId) }} underline="never" size="sm" style={{marginLeft:'-8px', color:'#000'}}>Rotate Signed-In User ({getTinadConfig().userId})</Anchor>
+            <Anchor 
+              title="Click to experiment with up to 3 simulated end users."
+              onClick={ () => { changeUserId(getTinadConfig().userId) }} 
+              underline="never" 
+              style={{marginLeft:'-8px', color:'#000'}}
+              size="sm">
+              Change Signed-In User (current: {currentUserId})
+            </Anchor>
           </Group>
 
           <Group>
@@ -66,7 +76,7 @@ const DemoControls = () => {
           </Group>
 
           <Group>
-            <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" style={{marginLeft:'-8px', color:'#000'}}>Help/Docs</Anchor>
+            <IconBook style={{color:'#000', marginLeft:'15px'}} /><Anchor size="sm" target="_blank" href="https://www.this-is-not-a-drill.com" style={{marginLeft:'-8px', color:'#000'}}>Help/Docs</Anchor>
           </Group>
         </Stack>
       </Card>

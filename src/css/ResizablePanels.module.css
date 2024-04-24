@@ -4,11 +4,13 @@
   width:100vw;
   height: 100vh;
   user-select: none; /* Prevent text selection while dragging */
+  overflow: hidden; /* Prevents scrolling on the main container */
 }
 
 .panelsContainer {
   display: flex;
   flex: 1; /* Take up remaining space */
+  overflow: auto; /* Allows scrolling within the panel container */
 }
 
 .topPanel {
@@ -17,19 +19,25 @@
   padding: 10px;
   box-sizing: border-box;
   border-bottom: 8px solid #369;
+  align-items: center; /* Center items vertically */
 }
 
 .topPanel h5 {
   font-weight: 600;
   color: #fff;
+  margin: 0;
 }
 
 .topPanel a, .topPanel svg {
   color: #eee;
+  display: inline-flex; /* Helps align svg and links properly */
+  align-items: center;
 }
+
 .topPanel a {
   margin-left: -14px;
 }
+
 .topPanel svg {
   margin-left:12px;
 }
@@ -40,20 +48,55 @@
   color: #ddd;
 }
 
+.topPanel img {
+  max-width: 100%;
+  height: auto;
+}
+
 .panel {
   flex-grow: 1;
-  height:100%;
+  overflow: auto; /* Enables scrolling inside each panel */
+  display: flex; /* Allows for child elements to be flexibly sized */
+  flex-direction: column; /* Stacks children vertically */
   border: none;
+}
+
+.panel iframe {
+  min-height:0;
+  flex-grow: 1;
 }
 
 .divider {
   cursor: ew-resize;
   background-color: #369;
   width: 8px;
+  min-width:8px;
   height: 100%;
   transition: background-color 0.2s;
+  pointer-events:auto;
 }
 
 .divider:hover {
   background-color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .panel {
+    height: calc(100vh - 55px); /* Adjust the height minus the top panel's height */
+  }
+
+  .panelsContainer {
+    flex-direction: column;
+  }
+
+  .divider {
+    display: none; /* Hide the divider on small screens */
+  }
+
+  .topPanel {
+    height: auto; /* Allow top panel to adjust height as needed */
+    flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+  }
+
 }

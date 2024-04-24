@@ -111,8 +111,8 @@ const DemoLayout = () => {
   return (
     <ResizeablePanels 
       topPanel =  {{  content: topPanelContent }}
-      leftPanel = {{  iframeId: 'demoPanel',      url: envConfig.TINAD_DEMOPANEL_URL, minWidth:500, maxWidth:800 }}
-      rightPanel = {{ iframeId: 'dashboardPanel', url: envConfig.TINAD_DASHBOARDPANEL_URL, minWidth:100 }}
+      leftPanel = {{  iframeId: 'demoPanel',      url: envConfig.TINAD_DEMOPANEL_URL, minWidth: 400, maxWidth:800 }}
+      rightPanel = {{ iframeId: 'dashboardPanel', url: envConfig.TINAD_DASHBOARDPANEL_URL, minWidth:'100vw' }}
     />
   );
 };

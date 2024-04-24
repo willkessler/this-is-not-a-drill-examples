@@ -16,8 +16,8 @@ const MainLayout = () => {
   const [ demoControls, setDemoControls ] = useState(<></>);
 
   useEffect(() => {
-    if ((envConfig.TINAD_IS_STACKBLITZ_PLAYGROUND !== 'true') &&
-        (envConfig.TINAD_IS_DEMO_SITE !== 'true')) {
+    if ((envConfig.TINAD_IS_DEMO_SITE === 'true') &&
+        (envConfig.TINAD_IS_STACKBLITZ_PLAYGROUND == 'true')) {
       console.log('Adding democontrols');
       setDemoControls(
         <DemoControls />

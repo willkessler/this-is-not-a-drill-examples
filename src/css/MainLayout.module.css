@@ -139,3 +139,10 @@
   border: 1px dotted #3f3;
   padding:3px;
 }
+
+
+@media (max-width: 768px) {
+  .footer { /* Assuming there's a class for the footer within your iframe content */
+    display: none; /* Hide footer on mobile devices */
+  }
+}
